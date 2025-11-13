@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProductStructure xmlns="http://www.inspection-plusplus.org">
+    <Part xsi:type="Part_Single" name="P1CVHS4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <SystemID uuid="Asm2810416,PartP236750"/>
+        <DisplayID language="en" text="-"/>
+        <DisplayID language="de" text="ENCODER MOUNT ROVER"/>
+        <PartAdaptor>false</PartAdaptor>
+        <Description>ENCODER MOUNT ROVER</Description>
+        <PDMstructureIndicator>1</PDMstructureIndicator>
+        <PDMversion>A+P1CVHS4.A.1.A.5P.MESSPL...ENCODER MOUNT ROVER</PDMversion>
+        <QAmaturity>draft</QAmaturity>
+        <Feature>
+            <SystemID uuid="2810416"/>
+            <PartAdaptor>false</PartAdaptor>
+        </Feature>
+    </Part>
+</ProductStructure>

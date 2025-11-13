@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<InspectionTaskList xmlns="http://www.inspection-plusplus.org">
+    <InspectionTask name="SURF and LEARN">
+        <SystemID uuid="1"/>
+        <Company>bmw</Company>
+        <Project>E00</Project>
+    </InspectionTask>
+</InspectionTaskList>
