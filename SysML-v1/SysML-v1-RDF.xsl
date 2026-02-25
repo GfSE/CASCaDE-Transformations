@@ -167,6 +167,56 @@
 					</xsl:for-each>
 				</sys:SystemComponent>
 			</xsl:for-each>
+			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:Class' and @xmi:*[local-name()='id']=//*[local-name()='DataContinuity_Profile']:*[local-name()='Design_Element']/@base_Class]/ancestor-or-self::*">
+				<xsl:variable name="input">
+					<xsl:value-of select="@xmi:*[local-name()='id']"/>
+				</xsl:variable>
+				<!--DesignElement-->
+				<sys:DesignElement>
+					<dc:identifier>
+						<xsl:value-of select="@xmi:*[local-name()='id']"/>
+					</dc:identifier>
+					<dc:title>
+						<xsl:value-of select="@name"/>
+					</dc:title>
+					<type>
+						<xsl:value-of select="@xmi:*[local-name()='type']"/>
+					</type>
+					<!--DesignElement relations-->
+					<xsl:for-each select="./*/@xmi:*[local-name()='id']">
+						<ComponentConnection.partOf.SystemComponent>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</ComponentConnection.partOf.SystemComponent>
+					</xsl:for-each>
+					<!--DesignElement relations-->
+					<xsl:for-each select="*[local-name()='generalization']/@general">
+						<DesignElement.specialismOf.ComponentConnection>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</DesignElement.specialismOf.ComponentConnection>
+					</xsl:for-each>
+					<!--DesignElement relations-->
+					<xsl:for-each select="//*[local-name()='ownedAttribute'][@type='$identifier']/@xmi:*[local-name()='id']">
+						<DesignElement.implements.FunctionalElement>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</DesignElement.implements.FunctionalElement>
+					</xsl:for-each>
+				</sys:DesignElement>
+			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:UseCase' and starts-with(@name, 'Fehlfunktion')]/ancestor-or-self::*">
 				<xsl:variable name="input">
 					<xsl:value-of select="@xmi:*[local-name()='id']"/>
@@ -280,6 +330,34 @@
 						</Function.ownedBy.Role>
 					</xsl:for-each>
 				</arch:Function>
+			</xsl:for-each>
+			<xsl:for-each select="//*[@xmi:*[local-name()='id']=//*[local-name()='DataContinuity_Profile']:*[local-name()='Funktionselement']/@base_Port]/ancestor-or-self::*">
+				<xsl:variable name="input">
+					<xsl:value-of select="@xmi:*[local-name()='id']"/>
+				</xsl:variable>
+				<!--FunctionalElement-->
+				<sys:FunctionalElement>
+					<dc:identifier>
+						<xsl:value-of select="@xmi:*[local-name()='id']"/>
+					</dc:identifier>
+					<dc:title>
+						<xsl:value-of select="@name"/>
+					</dc:title>
+					<type>
+						<xsl:value-of select="@xmi:*[local-name()='type']"/>
+					</type>
+					<!--FunctionalElement relations-->
+					<xsl:for-each select="./*/@xmi:*[local-name()='id']">
+						<ComponentInterface.partOf.ComponentInterface>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</ComponentInterface.partOf.ComponentInterface>
+					</xsl:for-each>
+				</sys:FunctionalElement>
 			</xsl:for-each>
 			<xsl:for-each select="///*[@xmi:*[local-name()='type']='uml:Class' and @xmi:*[local-name()='id']=//*[local-name()='sysml']:*[local-name()='InterfaceBlock']/@base_Class]/ancestor-or-self::*">
 				<xsl:variable name="input">
