@@ -1,0 +1,29 @@
+## Transformation ReqIF -> CASCaRA XML
+
+### ReqIF-to-CAS.xsl
+
+A XSL-Transformation (XSLT) from ReqIF to CASCaRA XML. Extracts:
+- ATTRIBUTE-DEFINITION -> cas:Property
+- SPEC-OBJECT-TYPE -> cas:Entity
+- SPEC-RELATION-TYPE -> cas:Relationship
+- SPECIFICATION-TYPE -> cas:Entity specializing cas:Root
+- SPEC-OBJECT -> cas:anEntity
+- SPEC-RELATION -> cas:aRelationship
+
+Limitations - does not extract:
+- Data ranges as defined in the ATTRIBUTE-DEFINITION
+- Any ATTRIBUTE other than title and description
+- The hierarchy nodes creating the tree
+
+### ReqIF-to-CAS.sef.json
+
+Created from the above for use with the CASCaRA Validation Tool (Reference Implementation). 
+The need for this format arises from the open-source transformation library Saxon-JS, 
+which does not support the native .xsl format. 
+
+### Transformation via SpecIF
+
+The open-source [SpecIF Editor](https://specif.de/apps/edit.html) offers a full
+transformation from ReqIF. Any SpecIF data can be transformed on export to
+CASCaRA JSON-LD (*.cas.jsonld) which in turn can be imported by the the
+[CASCaRA Validation Tool](https://app-alpha/product-information-graph.org).
