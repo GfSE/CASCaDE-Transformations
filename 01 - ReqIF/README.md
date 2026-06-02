@@ -9,6 +9,7 @@ A XSL-Transformation (XSLT) from ReqIF to CASCaRA XML. Extracts:
 - SPECIFICATION-TYPE -> cas:Entity specializing cas:Root
 - SPEC-OBJECT -> cas:anEntity
 - SPEC-RELATION -> cas:aRelationship
+- SPECIFICATION -> cas:anEntity
 
 Limitations - does not extract:
 - Data ranges as defined in the ATTRIBUTE-DEFINITION
