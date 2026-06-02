@@ -33,7 +33,7 @@ CASCaRA JSON-LD (*.cas.jsonld) which in turn can be imported by the the
 ... and suggestions: Please submit via [GitHub Issues](https://github.com/GfSE/CASCaDE-Transformations/issues).
 
 ### Author
-- [Dr. Oskar v. Dungern](mailto:od@enso-managers.de) for [GfsE](https://gfse.org) (German Chapter of INCOSE).
+- [Dr. Oskar v. Dungern](mailto:od@enso-managers.de) for [GfSE](https://gfse.org) (German Chapter of INCOSE).
 
 ### License
 ... and terms of use: [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0).
