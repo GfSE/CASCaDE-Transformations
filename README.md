@@ -1,5 +1,5 @@
-# CASCaDE-Transformations
-Transformations from different data formats to a knowledge graph to facilitate collaboration in the product lifecycle from conception to retirement. CASCaDE is a project to standardize such collaboration in terms of data format and ontology. 
+# CASCaRA-Transformations
+Transformations from different data formats to a knowledge graph to facilitate collaboration in the product lifecycle from conception to retirement. CASCaRA (formerly CASCaDE) is a project to standardize such collaboration in terms of data format and ontology. 
 
 ## Issues
 ... and suggestions: Please submit via [GitHub Issues](https://github.com/GfSE/CASCaDE-Transformations/issues).
