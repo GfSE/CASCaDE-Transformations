@@ -2,7 +2,7 @@
 
 ### ReqIF-to-CAS.xsl
 
-A XSL-Transformation (XSLT) from ReqIF to CASCaRA XML. Extracts:
+A stylesheet for XSL-Transformation (XSLT) from ReqIF to CASCaRA XML. Extracts:
 - ATTRIBUTE-DEFINITION -> cas:Property
 - SPEC-OBJECT-TYPE -> cas:Entity
 - SPEC-RELATION-TYPE -> cas:Relationship
