@@ -26,4 +26,4 @@ which does not support the native .xsl format.
 The open-source [SpecIF Editor](https://specif.de/apps/edit.html) offers a full
 transformation from ReqIF. Any SpecIF data can be transformed on export to
 CASCaRA JSON-LD (*.cas.jsonld) which in turn can be imported by the the
-[CASCaRA Validation Tool](https://app-alpha/product-information-graph.org).
+[CASCaRA Validation Tool](https://app-alpha.product-information-graph.org/).
