@@ -3,3 +3,6 @@ Transformations from different data formats to a knowledge graph to facilitate c
 
 ## Issues
 ... and suggestions: Please submit via [GitHub Issues](https://github.com/GfSE/CASCaDE-Transformations/issues).
+
+## License
+... and terms of use: [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0).
