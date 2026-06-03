@@ -108,7 +108,7 @@
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Project']">
 				<xsl:variable name="input">
-					<xsl:value-of select=""/>
+					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 				<!--Project-->
 				<org:Project>
@@ -123,14 +123,14 @@
 					</dc:title>
 					<!--Project relations-->
 					<xsl:for-each select=".//*[local-name()='ResponsibleOrganizations']/*[local-name()='Organization']/@uidRef">
-						<Task.ownedBy.Actor>
+						<Event.ownedBy.Actor>
 							<source>
 								<xsl:value-of select="$input"/>
 							</source>
 							<target>
 								<xsl:value-of select="."/>
 							</target>
-						</Task.ownedBy.Actor>
+						</Event.ownedBy.Actor>
 					</xsl:for-each>
 				</org:Project>
 			</xsl:for-each>

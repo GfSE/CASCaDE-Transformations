@@ -32,6 +32,28 @@
 							</target>
 						</Requirement.partOf.Requirement>
 					</xsl:for-each>
+					<!--Requirement relations-->
+					<xsl:for-each select="//*[local-name()='SPEC-RELATION'][./*[local-name()='TYPE']/*[local-name()='SPEC-RELATION-TYPE-REF']=//*[local-name()='SPEC-RELATION-TYPE'][@LONG-NAME='Generalization']/@IDENTIFIER and ./*[local-name()='SOURCE']/*[local-name()='SPEC-OBJECT-REF']=$input]/*[local-name()='TARGET']/*[local-name()='SPEC-OBJECT-REF']">
+						<Requirement.specialismOf.Requirement>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</Requirement.specialismOf.Requirement>
+					</xsl:for-each>
+					<!--Requirement relations-->
+					<xsl:for-each select="//*[local-name()='SPEC-RELATION'][./*[local-name()='TYPE']/*[local-name()='SPEC-RELATION-TYPE-REF']=//*[local-name()='SPEC-RELATION-TYPE'][@LONG-NAME='realizes' or @LONG-NAME='Satisfy' or @LONG-NAME='Trace']/@IDENTIFIER and ./*[local-name()='SOURCE']/*[local-name()='SPEC-OBJECT-REF']=$input]/*[local-name()='TARGET']/*[local-name()='SPEC-OBJECT-REF']">
+						<Requirement.derivedFrom.Requirement>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</Requirement.derivedFrom.Requirement>
+					</xsl:for-each>
 				</arch:Requirement>
 			</xsl:for-each>
 		</rdf:RDF>

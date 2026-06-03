@@ -13,7 +13,7 @@
 						<xsl:value-of select="@xmi:*[local-name()='id']"/>
 					</dc:identifier>
 					<number>
-						<xsl:value-of select="//*[@base_Class='$identifier']/@Id"/>
+						<xsl:value-of select="//*[@base_Class='$input']/@Id"/>
 					</number>
 					<dc:title>
 						<xsl:value-of select="@name"/>
@@ -106,7 +106,7 @@
 					</xsl:for-each>
 				</org:Role>
 			</xsl:for-each>
-			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:Class' and @xmi:*[local-name()='id']=//*[local-name()='sysml']:*[local-name()='Block']/@base_Class]/ancestor-or-self::*">
+			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:Class' and (@xmi:*[local-name()='id']=//*[local-name()='Block']/@base_Class or @xmi:*[local-name()='id']=//*[local-name()='element'][*[local-name()='properties']/@stereotype='Logical block']/@xmi:*[local-name()='idref'])]/ancestor-or-self::*">
 				<xsl:variable name="input">
 					<xsl:value-of select="@xmi:*[local-name()='id']"/>
 				</xsl:variable>
@@ -144,15 +144,137 @@
 						</SystemComponent.specialismOf.SystemComponent>
 					</xsl:for-each>
 					<!--SystemComponent relations-->
-					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']='$identifier']/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
-						<SystemComponent.satisfies.Requirement>
+					<xsl:for-each select="./*[local-name()='type']/@xmi:*[local-name()='idref']">
+						<SystemComponent.usedIn.SystemComponent>
 							<source>
 								<xsl:value-of select="$input"/>
 							</source>
 							<target>
 								<xsl:value-of select="."/>
 							</target>
-						</SystemComponent.satisfies.Requirement>
+						</SystemComponent.usedIn.SystemComponent>
+					</xsl:for-each>
+					<!--SystemComponent relations-->
+					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']=$input]/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
+						<SystemComponent.fulfils.Requirement>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</SystemComponent.fulfils.Requirement>
+					</xsl:for-each>
+				</sys:SystemComponent>
+			</xsl:for-each>
+			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:Property' and local-name()!='ownedEnd' and (./*[local-name()='type']/@xmi:*[local-name()='idref']=//*[local-name()='Block']/@base_Class or ./*[local-name()='type']/@xmi:*[local-name()='idref']=//*[local-name()='element'][*[local-name()='properties']/@stereotype='Logical block']/@xmi:*[local-name()='idref'])]">
+				<xsl:variable name="input">
+					<xsl:value-of select="@xmi:*[local-name()='id']"/>
+				</xsl:variable>
+				<!--SystemComponent-->
+				<sys:SystemComponent>
+					<dc:identifier>
+						<xsl:value-of select="@xmi:*[local-name()='id']"/>
+					</dc:identifier>
+					<dc:title>
+						<xsl:value-of select="@name"/>
+					</dc:title>
+					<type>
+						<xsl:value-of select="@xmi:*[local-name()='type']"/>
+					</type>
+					<!--SystemComponent relations-->
+					<xsl:for-each select="./*/@xmi:*[local-name()='id']">
+						<SystemComponent.partOf.SystemComponent>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</SystemComponent.partOf.SystemComponent>
+					</xsl:for-each>
+					<!--SystemComponent relations-->
+					<xsl:for-each select="*[local-name()='generalization']/@general">
+						<SystemComponent.specialismOf.SystemComponent>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</SystemComponent.specialismOf.SystemComponent>
+					</xsl:for-each>
+					<!--SystemComponent relations-->
+					<xsl:for-each select="./*[local-name()='type']/@xmi:*[local-name()='idref']">
+						<SystemComponent.usedIn.SystemComponent>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</SystemComponent.usedIn.SystemComponent>
+					</xsl:for-each>
+					<!--SystemComponent relations-->
+					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']=$input]/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
+						<SystemComponent.fulfils.Requirement>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</SystemComponent.fulfils.Requirement>
+					</xsl:for-each>
+				</sys:SystemComponent>
+			</xsl:for-each>
+			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:Component']/ancestor-or-self::*">
+				<xsl:variable name="input">
+					<xsl:value-of select="@xmi:*[local-name()='id']"/>
+				</xsl:variable>
+				<!--SystemComponent-->
+				<sys:SystemComponent>
+					<dc:identifier>
+						<xsl:value-of select="@xmi:*[local-name()='id']"/>
+					</dc:identifier>
+					<dc:title>
+						<xsl:value-of select="@name"/>
+					</dc:title>
+					<type>
+						<xsl:value-of select="@xmi:*[local-name()='type']"/>
+					</type>
+					<!--SystemComponent relations-->
+					<xsl:for-each select="./*/@xmi:*[local-name()='id']">
+						<SystemComponent.partOf.SystemComponent>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</SystemComponent.partOf.SystemComponent>
+					</xsl:for-each>
+					<!--SystemComponent relations-->
+					<xsl:for-each select="*[local-name()='generalization']/@general">
+						<SystemComponent.specialismOf.SystemComponent>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</SystemComponent.specialismOf.SystemComponent>
+					</xsl:for-each>
+					<!--SystemComponent relations-->
+					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']=$input]/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
+						<SystemComponent.fulfils.Requirement>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</SystemComponent.fulfils.Requirement>
 					</xsl:for-each>
 					<!--SystemComponent relations-->
 					<xsl:for-each select="/*[local-name()='ownedAttribute'][@xmi:*[local-name()='type']='uml:Port']/@xmi:*[local-name()='id']">
@@ -205,7 +327,7 @@
 						</DesignElement.specialismOf.ComponentConnection>
 					</xsl:for-each>
 					<!--DesignElement relations-->
-					<xsl:for-each select="//*[local-name()='ownedAttribute'][@type='$identifier']/@xmi:*[local-name()='id']">
+					<xsl:for-each select="//*[local-name()='ownedAttribute'][@type=$input]/@xmi:*[local-name()='id']">
 						<DesignElement.implements.FunctionalElement>
 							<source>
 								<xsl:value-of select="$input"/>
@@ -221,13 +343,13 @@
 				<xsl:variable name="input">
 					<xsl:value-of select="@xmi:*[local-name()='id']"/>
 				</xsl:variable>
-				<!--FunctionFailure-->
-				<arch:FunctionFailure>
+				<!--Deviation-->
+				<sys:Deviation>
 					<dc:identifier>
 						<xsl:value-of select="@xmi:*[local-name()='id']"/>
 					</dc:identifier>
 					<number>
-						<xsl:value-of select="//*[@base_Class='$identifier']/@Id"/>
+						<xsl:value-of select="//*[@base_Class='$input']/@Id"/>
 					</number>
 					<dc:title>
 						<xsl:value-of select="@name"/>
@@ -235,18 +357,18 @@
 					<type>
 						<xsl:value-of select="@xmi:*[local-name()='type']"/>
 					</type>
-					<!--FunctionFailure relations-->
+					<!--Deviation relations-->
 					<xsl:for-each select="./*/@xmi:*[local-name()='id']">
-						<FunctionFailure.partOf.FunctionFailure>
+						<Deviation.partOf.Deviation>
 							<source>
 								<xsl:value-of select="$input"/>
 							</source>
 							<target>
 								<xsl:value-of select="."/>
 							</target>
-						</FunctionFailure.partOf.FunctionFailure>
+						</Deviation.partOf.Deviation>
 					</xsl:for-each>
-				</arch:FunctionFailure>
+				</sys:Deviation>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:Activity']/ancestor-or-self::*">
 				<xsl:variable name="input">
@@ -286,7 +408,7 @@
 						</Function.specialismOf.Function>
 					</xsl:for-each>
 					<!--Function relations-->
-					<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:ControlFlow' and *[local-name()='target']='$identifier']/@source">
+					<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:ControlFlow' and *[local-name()='target']=$input]/@source">
 						<Function.follows.Function>
 							<source>
 								<xsl:value-of select="$input"/>
@@ -308,7 +430,7 @@
 						</Function.uses.Function>
 					</xsl:for-each>
 					<!--Function relations-->
-					<xsl:for-each select="//*[*[local-name()='supplier']/@xmi:*[local-name()='idref']='$identifier']/*[local-name()='client']/@xmi:*[local-name()='idref']">
+					<xsl:for-each select="//*[*[local-name()='supplier']/@xmi:*[local-name()='idref']=$input]/*[local-name()='client']/@xmi:*[local-name()='idref']">
 						<Function.ownedBy.UseCase>
 							<source>
 								<xsl:value-of select="$input"/>
@@ -319,7 +441,7 @@
 						</Function.ownedBy.UseCase>
 					</xsl:for-each>
 					<!--Function relations-->
-					<xsl:for-each select="//*[*[local-name()='supplier']/@xmi:*[local-name()='idref']='$identifier']/*[local-name()='client']/@xmi:*[local-name()='idref']">
+					<xsl:for-each select="//*[*[local-name()='supplier']/@xmi:*[local-name()='idref']=$input]/*[local-name()='client']/@xmi:*[local-name()='idref']">
 						<Function.ownedBy.Role>
 							<source>
 								<xsl:value-of select="$input"/>
@@ -359,7 +481,7 @@
 					</xsl:for-each>
 				</sys:FunctionalElement>
 			</xsl:for-each>
-			<xsl:for-each select="///*[@xmi:*[local-name()='type']='uml:Class' and @xmi:*[local-name()='id']=//*[local-name()='sysml']:*[local-name()='InterfaceBlock']/@base_Class]/ancestor-or-self::*">
+			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:Class' and @xmi:*[local-name()='id']=//*[local-name()='InterfaceBlock']/@base_Class]/ancestor-or-self::*">
 				<xsl:variable name="input">
 					<xsl:value-of select="@xmi:*[local-name()='id']"/>
 				</xsl:variable>
@@ -375,7 +497,7 @@
 						<xsl:value-of select="@xmi:*[local-name()='type']"/>
 					</type>
 					<!--ComponentInterface relations-->
-					<xsl:for-each select="./*/@xmi:*[local-name()='id']">
+					<xsl:for-each select="../@xmi:*[local-name()='id']">
 						<ComponentInterface.partOf.SystemComponent>
 							<source>
 								<xsl:value-of select="$input"/>
@@ -387,7 +509,68 @@
 					</xsl:for-each>
 				</sys:ComponentInterface>
 			</xsl:for-each>
-			<xsl:for-each select="//*[@xmi:*[local-name()='id']=//*[local-name()='sysml']:*[local-name()='Block']/@base_Class]/*[local-name()='ownedAttribute'][@xmi:*[local-name()='type']='uml:Port']">
+			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:Manifestation']/ancestor-or-self::*">
+				<xsl:variable name="input">
+					<xsl:value-of select="@xmi:*[local-name()='id']"/>
+				</xsl:variable>
+				<!--SystemComponent-->
+				<sys:SystemComponent>
+					<dc:identifier>
+						<xsl:value-of select="@xmi:*[local-name()='id']"/>
+					</dc:identifier>
+					<dc:title>
+						<xsl:value-of select="@name"/>
+					</dc:title>
+					<type>
+						<xsl:value-of select="@xmi:*[local-name()='type']"/>
+					</type>
+					<!--SystemComponent relations-->
+					<xsl:for-each select="./*/@xmi:*[local-name()='id']">
+						<SystemComponent.partOf.SystemComponent>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</SystemComponent.partOf.SystemComponent>
+					</xsl:for-each>
+					<!--SystemComponent relations-->
+					<xsl:for-each select="*[local-name()='generalization']/@general">
+						<SystemComponent.specialismOf.SystemComponent>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</SystemComponent.specialismOf.SystemComponent>
+					</xsl:for-each>
+					<!--SystemComponent relations-->
+					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']=$input]/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
+						<SystemComponent.fulfils.Requirement>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</SystemComponent.fulfils.Requirement>
+					</xsl:for-each>
+					<!--SystemComponent relations-->
+					<xsl:for-each select="/*[local-name()='ownedAttribute'][@xmi:*[local-name()='type']='uml:Port']/@xmi:*[local-name()='id']">
+						<SystemComponent.provides.ComponentInterface>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</SystemComponent.provides.ComponentInterface>
+					</xsl:for-each>
+				</sys:SystemComponent>
+			</xsl:for-each>
+			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:Port']">
 				<xsl:variable name="input">
 					<xsl:value-of select="@xmi:*[local-name()='id']"/>
 				</xsl:variable>
@@ -403,15 +586,15 @@
 						<xsl:value-of select="@xmi:*[local-name()='type']"/>
 					</type>
 					<!--ComponentInterface relations-->
-					<xsl:for-each select="./*/@xmi:*[local-name()='id']">
-						<ComponentInterface.partOf.ComponentInterface>
+					<xsl:for-each select="../@xmi:*[local-name()='id']">
+						<ComponentInterface.partOf.SystemComponent>
 							<source>
 								<xsl:value-of select="$input"/>
 							</source>
 							<target>
 								<xsl:value-of select="."/>
 							</target>
-						</ComponentInterface.partOf.ComponentInterface>
+						</ComponentInterface.partOf.SystemComponent>
 					</xsl:for-each>
 					<!--ComponentInterface relations-->
 					<xsl:for-each select="*[local-name()='generalization']/@general">
@@ -426,7 +609,7 @@
 					</xsl:for-each>
 				</sys:ComponentInterface>
 			</xsl:for-each>
-			<xsl:for-each select="//*[contains(name(), 'Requirement')]/ancestor-or-self::*">
+			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:Class' and @xmi:*[local-name()='id']=//*[local-name()='Requirement']/@base_Class]/ancestor-or-self::*">
 				<xsl:variable name="input">
 					<xsl:value-of select="@xmi:*[local-name()='id']"/>
 				</xsl:variable>
@@ -436,16 +619,16 @@
 						<xsl:value-of select="@xmi:*[local-name()='id']"/>
 					</dc:identifier>
 					<number>
-						<xsl:value-of select="@id|@Id"/>
+						<xsl:value-of select="//*[local-name()='sysml']:*[local-name()='Requirement'][@base_Class='$identifier']/@*[name()='id' or name()='Id']"/>
 					</number>
 					<dc:title>
-						<xsl:value-of select="//*[@xmi:*[local-name()='id']='$identifier']/@name"/>
+						<xsl:value-of select="@name"/>
 					</dc:title>
 					<dc:description>
-						<xsl:value-of select="@text|@Text"/>
+						<xsl:value-of select="//*[local-name()='sysml']:*[local-name()='Requirement'][@base_Class='$identifier']/@*[name()='text' or name()='Text']"/>
 					</dc:description>
 					<type>
-						<xsl:value-of select="//*[@xmi:*[local-name()='id']=//*[@xmi:*[local-name()='id']='$identifier']/@base_Class]/@name"/>
+						<xsl:value-of select="@xmi:*[local-name()='type']"/>
 					</type>
 					<!--Requirement relations-->
 					<xsl:for-each select="./*/@xmi:*[local-name()='id']">
@@ -459,7 +642,7 @@
 						</Requirement.partOf.Requirement>
 					</xsl:for-each>
 					<!--Requirement relations-->
-					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']='$identifier']/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
+					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']=$input]/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
 						<Requirement.satisfies.Requirement>
 							<source>
 								<xsl:value-of select="$input"/>
@@ -487,10 +670,10 @@
 						<xsl:value-of select="@name"/>
 					</dc:title>
 					<dc:description>
-						<xsl:value-of select="//*[@xmi:*[local-name()='id']='$identifier']/@Text"/>
+						<xsl:value-of select="//*[@xmi:*[local-name()='id']='$input']/@Text"/>
 					</dc:description>
 					<type>
-						<xsl:value-of select="//*[@xmi:*[local-name()='id']=//*[@xmi:*[local-name()='id']='$identifier']/@base_Class]/@name"/>
+						<xsl:value-of select="//*[@xmi:*[local-name()='id']=//*[@xmi:*[local-name()='id']='$input']/@base_Class]/@name"/>
 					</type>
 					<!--StakeholderRequirement relations-->
 					<xsl:for-each select="./*/@xmi:*[local-name()='id']">
@@ -504,7 +687,7 @@
 						</Requirement.partOf.Requirement>
 					</xsl:for-each>
 					<!--StakeholderRequirement relations-->
-					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']='$identifier']/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
+					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']=$input]/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
 						<Requirement.satisfies.Requirement>
 							<source>
 								<xsl:value-of select="$input"/>
@@ -516,7 +699,7 @@
 					</xsl:for-each>
 				</arch:StakeholderRequirement>
 			</xsl:for-each>
-			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:Class' and @xmi:*[local-name()='id']=(//*[local-name()='sysml']:*[local-name()='System']/@base_Class)]/ancestor-or-self::*">
+			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:Class' and @xmi:*[local-name()='id']=(//local-name()='System']/@base_Class)]/ancestor-or-self::*">
 				<xsl:variable name="input">
 					<xsl:value-of select="@xmi:*[local-name()='id']"/>
 				</xsl:variable>
@@ -554,30 +737,19 @@
 						</SystemComponent.specialismOf.SystemComponent>
 					</xsl:for-each>
 					<!--MechanicalComponent relations-->
-					<xsl:for-each select="/*[local-name()='ownedAttribute'][@xmi:*[local-name()='type']='uml:Port']/@xmi:*[local-name()='id']">
-						<SystemComponent.provides.ComponentInterface>
+					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']=$input]/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
+						<SystemComponent.fulfils.Requirement>
 							<source>
 								<xsl:value-of select="$input"/>
 							</source>
 							<target>
 								<xsl:value-of select="."/>
 							</target>
-						</SystemComponent.provides.ComponentInterface>
-					</xsl:for-each>
-					<!--MechanicalComponent relations-->
-					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']='$identifier']/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
-						<SystemComponent.satisfies.Requirement>
-							<source>
-								<xsl:value-of select="$input"/>
-							</source>
-							<target>
-								<xsl:value-of select="."/>
-							</target>
-						</SystemComponent.satisfies.Requirement>
+						</SystemComponent.fulfils.Requirement>
 					</xsl:for-each>
 				</mech:MechanicalComponent>
 			</xsl:for-each>
-			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:Class' and (@xmi:*[local-name()='id']=//*[local-name()='sysml']:*[local-name()='functionalRequirement']/@base_Class)]/ancestor-or-self::*">
+			<xsl:for-each select="//*[@xmi:*[local-name()='type']='uml:Class' and (@xmi:*[local-name()='id']=//*[local-name()='functionalRequirement']/@base_Class)]/ancestor-or-self::*">
 				<xsl:variable name="input">
 					<xsl:value-of select="@xmi:*[local-name()='id']"/>
 				</xsl:variable>
@@ -590,13 +762,13 @@
 						<xsl:value-of select="@id|@Id"/>
 					</number>
 					<dc:title>
-						<xsl:value-of select="//*[@xmi:*[local-name()='id']='$identifier']/@name"/>
+						<xsl:value-of select="//*[@xmi:*[local-name()='id']='$input']/@name"/>
 					</dc:title>
 					<dc:description>
 						<xsl:value-of select="@text|@Text"/>
 					</dc:description>
 					<type>
-						<xsl:value-of select="//*[@xmi:*[local-name()='id']=//*[@xmi:*[local-name()='id']='$identifier']/@base_Class]/@name"/>
+						<xsl:value-of select="//*[@xmi:*[local-name()='id']=//*[@xmi:*[local-name()='id']='$input']/@base_Class]/@name"/>
 					</type>
 					<!--SystemRequirement relations-->
 					<xsl:for-each select="./*/@xmi:*[local-name()='id']">
@@ -610,7 +782,7 @@
 						</Requirement.partOf.Requirement>
 					</xsl:for-each>
 					<!--SystemRequirement relations-->
-					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']='$identifier']/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
+					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']=$input]/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
 						<Requirement.satisfies.Requirement>
 							<source>
 								<xsl:value-of select="$input"/>
@@ -638,10 +810,10 @@
 						<xsl:value-of select="@name"/>
 					</dc:title>
 					<dc:description>
-						<xsl:value-of select="//*[@xmi:*[local-name()='id']='$identifier']/@Text"/>
+						<xsl:value-of select="//*[@xmi:*[local-name()='id']='$input']/@Text"/>
 					</dc:description>
 					<type>
-						<xsl:value-of select="//*[@xmi:*[local-name()='id']=//*[@xmi:*[local-name()='id']='$identifier']/@base_Class]/@name"/>
+						<xsl:value-of select="//*[@xmi:*[local-name()='id']=//*[@xmi:*[local-name()='id']='$input']/@base_Class]/@name"/>
 					</type>
 					<!--SystemRequirement relations-->
 					<xsl:for-each select="./*/@xmi:*[local-name()='id']">
@@ -655,7 +827,7 @@
 						</Requirement.partOf.Requirement>
 					</xsl:for-each>
 					<!--SystemRequirement relations-->
-					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']='$identifier']/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
+					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']=$input]/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
 						<Requirement.satisfies.Requirement>
 							<source>
 								<xsl:value-of select="$input"/>
@@ -716,15 +888,15 @@
 						</SystemComponent.provides.ComponentInterface>
 					</xsl:for-each>
 					<!--MechanicalComponent relations-->
-					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']='$identifier']/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
-						<SystemComponent.satisfies.Requirement>
+					<xsl:for-each select="//*[*[local-name()='client']/@xmi:*[local-name()='idref']=$input]/*[local-name()='supplier']/@xmi:*[local-name()='idref']">
+						<SystemComponent.fulfils.Requirement>
 							<source>
 								<xsl:value-of select="$input"/>
 							</source>
 							<target>
 								<xsl:value-of select="."/>
 							</target>
-						</SystemComponent.satisfies.Requirement>
+						</SystemComponent.fulfils.Requirement>
 					</xsl:for-each>
 				</mech:MechanicalComponent>
 			</xsl:for-each>
@@ -764,6 +936,17 @@
 								<xsl:value-of select="."/>
 							</target>
 						</UseCase.specialismOf.UseCase>
+					</xsl:for-each>
+					<!--UseCase relations-->
+					<xsl:for-each select="//*[*[local-name()='supplier']/@xmi:*[local-name()='idRef']=$input]/*[local-name()='client']/@xmi:*[local-name()='idRef']">
+						<UseCase.ownedBy.Role>
+							<source>
+								<xsl:value-of select="$input"/>
+							</source>
+							<target>
+								<xsl:value-of select="."/>
+							</target>
+						</UseCase.ownedBy.Role>
 					</xsl:for-each>
 				</arch:UseCase>
 			</xsl:for-each>
