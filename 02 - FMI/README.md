@@ -14,7 +14,7 @@ Created from the above for use with the CASCaRA Validation Tool (Reference Imple
 The need for this format arises from the open-source transformation library Saxon-JS, 
 which does not support the native .xsl format. 
 
-### CACaRA Validation Tool
+### CASCaRA Validation Tool
 
 This transformation is available in the [CASCaRA Validation Tool](https://app-alpha.product-information-graph.org/interfaces). 
 Please test it with your data ... and if you run into a problem, have a suggestion or 
