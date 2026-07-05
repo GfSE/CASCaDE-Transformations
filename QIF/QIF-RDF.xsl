@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel" xmlns:ctx="http://omg.org/spec/CASCaRA/ContextElements/" xmlns:mech="http://omg.org/spec/CASCaRA/MechanicalDesign/" xmlns:org="http://omg.org/spec/CASCaRA/Organization/" version="1">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:ctx="http://omg.org/spec/CASCaRA/ContextElements/" xmlns:mech="http://omg.org/spec/CASCaRA/MechanicalDesign/" xmlns:org="http://omg.org/spec/CASCaRA/Organization/" version="1">
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
@@ -15,10 +15,10 @@
 					<dc:identifier>
 						<xsl:value-of select="*[local-name()='Name']"/>
 					</dc:identifier>
-					<firstname>
+					<firstname xmlns="">
 						<xsl:value-of select="substring-before(./*[local-name()='Name'],' ')"/>
 					</firstname>
-					<lastname>
+					<lastname xmlns="">
 						<xsl:value-of select="substring-after(./*[local-name()='Name'],' ')"/>
 					</lastname>
 				</org:Person>
@@ -54,7 +54,7 @@
 					<dc:identifier>
 						<xsl:value-of select="@id"/>
 					</dc:identifier>
-					<type>
+					<type xmlns="">
 						<xsl:value-of select="name()"/>
 					</type>
 				</mech:ModelAnnotation>
@@ -98,7 +98,7 @@
 					<dc:identifier>
 						<xsl:value-of select="@id"/>
 					</dc:identifier>
-					<type>
+					<type xmlns="">
 						<xsl:value-of select="name()"/>
 					</type>
 				</mech:Face>
@@ -120,13 +120,13 @@
 					<dc:identifier>
 						<xsl:value-of select="./*[local-name()='Text']"/>
 					</dc:identifier>
-					<number>
+					<number xmlns="">
 						<xsl:value-of select="./*[local-name()='Text']"/>
 					</number>
 					<dc:title>
 						<xsl:value-of select="../*[local-name()='PartNote'][@label='MATERIAL']/*[local-name()='Text']"/>
 					</dc:title>
-					<density>
+					<density xmlns="">
 						<xsl:value-of select="../*[local-name()='PartNote'][@label='MATERIAL_DENSITY']/*[local-name()='Text']"/>
 					</density>
 				</mech:Material>
@@ -173,7 +173,7 @@
 					<dc:title>
 						<xsl:value-of select="./*[local-name()='PartNoteSet']/*[local-name()='PartNote'][@label='PART_NAME']/*[local-name()='Text']"/>
 					</dc:title>
-					<mass>
+					<mass xmlns="">
 						<xsl:value-of select="./*[local-name()='PartNoteSet']/*[local-name()='PartNote'][@label='WEIGHT_CALCULATED']/*[local-name()='Text']"/>
 					</mass>
 				</mech:MechanicalComponent>

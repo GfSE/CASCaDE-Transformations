@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel" xmlns:arch="http://omg.org/spec/CASCaRA/ProductArchitecture/" xmlns:org="http://omg.org/spec/CASCaRA/Organization/" xmlns:sys="http://omg.org/spec/CASCaRA/SystemsDesign/" version="1">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:arch="http://omg.org/spec/CASCaRA/ProductArchitecture/" xmlns:org="http://omg.org/spec/CASCaRA/Organization/" xmlns:sys="http://omg.org/spec/CASCaRA/SystemsDesign/" version="1">
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
@@ -68,7 +68,7 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type>
+					<type xmlns="">
 						<xsl:value-of select="@xmi:type"/>
 					</type>
 				</sys:SystemComponent>
@@ -149,7 +149,7 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type>
+					<type xmlns="">
 						<xsl:value-of select="@xmi:type"/>
 					</type>
 				</arch:Function>
@@ -258,7 +258,7 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type>
+					<type xmlns="">
 						<xsl:value-of select="@xmi:type"/>
 					</type>
 				</sys:SystemComponent>
@@ -339,10 +339,10 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type>
+					<type xmlns="">
 						<xsl:value-of select="@xmi:type"/>
 					</type>
-					<parent>
+					<parent xmlns="">
 						<xsl:value-of select="../@name"/>
 					</parent>
 				</sys:ComponentInterface>
@@ -395,7 +395,7 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type>
+					<type xmlns="">
 						<xsl:value-of select="@xmi:type"/>
 					</type>
 				</arch:UseCase>

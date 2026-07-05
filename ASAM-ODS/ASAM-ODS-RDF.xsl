@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel" xmlns:sys="http://omg.org/spec/CASCaRA/SystemsDesign/" xmlns:ver="http://omg.org/spec/CASCaRA/ProductVerification/" version="1">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:sys="http://omg.org/spec/CASCaRA/SystemsDesign/" xmlns:ver="http://omg.org/spec/CASCaRA/ProductVerification/" version="1">
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
@@ -18,10 +18,10 @@
 					<dc:title>
 						<xsl:value-of select="*[local-name()='Name']"/>
 					</dc:title>
-					<dateTime>
+					<dateTime xmlns="">
 						<xsl:value-of select="*[local-name()='DateCreated']"/>
 					</dateTime>
-					<type>
+					<type xmlns="">
 						<xsl:value-of select="*[local-name()='Classification']"/>
 					</type>
 				</ver:VerificationRun>
@@ -60,13 +60,13 @@
 					<dc:title>
 						<xsl:value-of select="*[local-name()='Name']"/>
 					</dc:title>
-					<dateTime>
+					<dateTime xmlns="">
 						<xsl:value-of select="*[local-name()='DateCreated']"/>
 					</dateTime>
-					<type>
+					<type xmlns="">
 						<xsl:value-of select="*[local-name()='Classification']"/>
 					</type>
-					<revision>
+					<revision xmlns="">
 						<xsl:value-of select="*[local-name()='Version']"/>
 					</revision>
 				</ver:VerificationResource>
@@ -105,7 +105,7 @@
 					<dc:title>
 						<xsl:value-of select="*[local-name()='Id']/*[local-name()='Identifier']/@id"/>
 					</dc:title>
-					<mass>
+					<mass xmlns="">
 						<xsl:value-of select="*[local-name()='Versions']/*[local-name()='PartVersion']/*[local-name()='Views']/*[local-name()='PartView']/*[local-name()='PropertyValueAssignment']/*[local-name()='AssignedPropertyValues']/*[local-name()='PropertyValue'][./@uid='PRV--26']/*[local-name()='ValueComponent']/*[local-name()='CharacterString']"/>
 					</mass>
 				</ver:VerificationResource>
@@ -186,10 +186,10 @@
 					<dc:title>
 						<xsl:value-of select="*[local-name()='Name']"/>
 					</dc:title>
-					<dateTime>
+					<dateTime xmlns="">
 						<xsl:value-of select="*[local-name()='DateCreated']"/>
 					</dateTime>
-					<type>
+					<type xmlns="">
 						<xsl:value-of select="*[local-name()='Classification']"/>
 					</type>
 				</sys:SystemComponent>
