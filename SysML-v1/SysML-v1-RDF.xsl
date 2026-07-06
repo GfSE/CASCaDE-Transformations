@@ -8,7 +8,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="//*[@base_Class='$input']/@Id, @name"/>
+					<xsl:value-of select="concat(//*[@base_Class='$input']/@Id, @name)"/>
 				</xsl:variable>
 				<!--ComponentState-->
 				<sys:ComponentState>
@@ -429,7 +429,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="//*[@base_Class='$input']/@Id, @name"/>
+					<xsl:value-of select="concat(//*[@base_Class='$input']/@Id, @name)"/>
 				</xsl:variable>
 				<!--Deviation-->
 				<sys:Deviation>
@@ -786,7 +786,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="//*[local-name()='Requirement'][@base_Class='$identifier']/@*[name()='id' or name()='Id'], @name"/>
+					<xsl:value-of select="concat(//*[local-name()='Requirement'][@base_Class='$identifier']/@*[name()='id' or name()='Id'], @name)"/>
 				</xsl:variable>
 				<!--Requirement-->
 				<arch:Requirement>
@@ -851,7 +851,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@id|@Id, @name"/>
+					<xsl:value-of select="concat(@id|@Id, @name)"/>
 				</xsl:variable>
 				<!--StakeholderRequirement-->
 				<arch:StakeholderRequirement>
@@ -989,7 +989,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@id|@Id, //*[@xmi:id='$input']/@name"/>
+					<xsl:value-of select="concat(@id|@Id, //*[@xmi:id='$input']/@name)"/>
 				</xsl:variable>
 				<!--SystemRequirement-->
 				<arch:SystemRequirement>
@@ -1054,7 +1054,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@id|@Id, @name"/>
+					<xsl:value-of select="concat(@id|@Id, @name)"/>
 				</xsl:variable>
 				<!--SystemRequirement-->
 				<arch:SystemRequirement>

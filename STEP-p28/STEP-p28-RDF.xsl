@@ -207,7 +207,7 @@
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="*[local-name()='Id']/@id, *[local-name()='Name']/*[local-name()='CharacterString']"/>
+					<xsl:value-of select="concat(*[local-name()='Id']/@id, *[local-name()='Name']/*[local-name()='CharacterString'])"/>
 				</xsl:variable>
 				<!--Project-->
 				<org:Project>

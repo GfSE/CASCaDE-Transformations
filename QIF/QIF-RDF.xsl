@@ -8,7 +8,7 @@
 					<xsl:value-of select="*[local-name()='Name']"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="substring-before(./*[local-name()='Name'],' '), substring-after(./*[local-name()='Name'],' ')"/>
+					<xsl:value-of select="concat(substring-before(./*[local-name()='Name'],' '), substring-after(./*[local-name()='Name'],' '))"/>
 				</xsl:variable>
 				<!--Person-->
 				<org:Person>
@@ -109,7 +109,7 @@
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@id, name()"/>
+					<xsl:value-of select="concat(@id, name())"/>
 				</xsl:variable>
 				<!--Face-->
 				<mech:Face>
@@ -137,7 +137,7 @@
 					<xsl:value-of select="./*[local-name()='Text']"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="./*[local-name()='Text'], ../*[local-name()='PartNote'][@label='MATERIAL']/*[local-name()='Text']"/>
+					<xsl:value-of select="concat(./*[local-name()='Text'], ../*[local-name()='PartNote'][@label='MATERIAL']/*[local-name()='Text'])"/>
 				</xsl:variable>
 				<!--Material-->
 				<mech:Material>
