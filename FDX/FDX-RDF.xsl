@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:sys="http://omg.org/spec/CASCaRA/SystemsDesign/" xmlns:ver="http://omg.org/spec/CASCaRA/ProductVerification/" version="1">
+<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:sys="http://omg.org/spec/CASCaRA/SystemsDesign/" xmlns:ver="http://omg.org/spec/CASCaRA/ProductVerification/" version="1">
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
 			<xsl:for-each select="//(*[local-name()='AoTest']|*[local-name()='AoSubTest']|*[local-name()='AoTestAbstract'])">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Id']"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="*[local-name()='Name']"/>
 				</xsl:variable>
 				<!--VerificationRun-->
 				<ver:VerificationRun>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="*[local-name()='Id']"/>
 					</dc:identifier>
@@ -27,7 +33,7 @@
 				</ver:VerificationRun>
 			</xsl:for-each>
 			<xsl:for-each select="//(*[local-name()='AoTest']|*[local-name()='AoSubTest']|*[local-name()='AoTestAbstract'])">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Id']"/>
 				</xsl:variable>
 				<!--VerificationRun relations-->
@@ -46,14 +52,20 @@
 				</xsl:for-each>
 			</xsl:for-each>
 			<xsl:for-each select="//*[contains(name(),'TestEquipment')]">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Id']"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="*[local-name()='Name']"/>
 				</xsl:variable>
 				<!--VerificationResource-->
 				<ver:VerificationResource>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="*[local-name()='Id']"/>
 					</dc:identifier>
@@ -72,7 +84,7 @@
 				</ver:VerificationResource>
 			</xsl:for-each>
 			<xsl:for-each select="//*[contains(name(),'TestEquipment')]">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Id']"/>
 				</xsl:variable>
 				<!--VerificationResource relations-->
@@ -91,14 +103,20 @@
 				</xsl:for-each>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='TestEquipmentPart']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='application_attribute'][name='Id']@uid"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="*[local-name()='Id']/*[local-name()='Identifier']/@id"/>
 				</xsl:variable>
 				<!--VerificationResource-->
 				<ver:VerificationResource>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="*[local-name()='application_attribute'][name='Id']@uid"/>
 					</dc:identifier>
@@ -111,7 +129,7 @@
 				</ver:VerificationResource>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='TestEquipmentPart']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='application_attribute'][name='Id']@uid"/>
 				</xsl:variable>
 				<!--VerificationResource relations-->
@@ -157,7 +175,7 @@
 					</ver:SystemComponent_fulfils_Requirement>
 				</xsl:for-each>
 				<!--VerificationResource relations-->
-				<xsl:for-each select="//*[local-name()='Requirement'][//*[local-name()='RequirementView']/@uid=$input]/*[local-name()='uid']">
+				<xsl:for-each select="//*[local-name()='Requirement'][//*[local-name()='RequirementView']/@uid='$input']/*[local-name()='uid']">
 					<ver:SystemComponent_fulfils_Requirement>
 						<xsl:attribute name="rdf:about">
 							<xsl:value-of select="concat($input,'_SystemComponent.fulfils.Requirement_',.)"/>
@@ -172,14 +190,20 @@
 				</xsl:for-each>
 			</xsl:for-each>
 			<xsl:for-each select="//(*[local-name()='AoUnitUnderTest']|*[local-name()='AoUnitUnderTestPart'])">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Id']"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="*[local-name()='Name']"/>
 				</xsl:variable>
 				<!--SystemComponent-->
 				<sys:SystemComponent>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="*[local-name()='Id']"/>
 					</dc:identifier>
@@ -195,7 +219,7 @@
 				</sys:SystemComponent>
 			</xsl:for-each>
 			<xsl:for-each select="//(*[local-name()='AoUnitUnderTest']|*[local-name()='AoUnitUnderTestPart'])">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Id']"/>
 				</xsl:variable>
 				<!--SystemComponent relations-->

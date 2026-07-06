@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:ctx="http://omg.org/spec/CASCaRA/ContextElements/" xmlns:mech="http://omg.org/spec/CASCaRA/MechanicalDesign/" xmlns:org="http://omg.org/spec/CASCaRA/Organization/" version="1">
+<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:ctx="http://omg.org/spec/CASCaRA/ContextElements/" xmlns:mech="http://omg.org/spec/CASCaRA/MechanicalDesign/" xmlns:org="http://omg.org/spec/CASCaRA/Organization/" version="1">
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/*[local-name()='Header']/Author">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Name']"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="substring-before(./*[local-name()='Name'],' '), substring-after(./*[local-name()='Name'],' ')"/>
 				</xsl:variable>
 				<!--Person-->
 				<org:Person>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="*[local-name()='Name']"/>
 					</dc:identifier>
@@ -24,7 +30,7 @@
 				</org:Person>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/*[local-name()='Header']/Author">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Name']"/>
 				</xsl:variable>
 				<!--Person relations-->
@@ -43,14 +49,20 @@
 				</xsl:for-each>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/*[local-name()='Characteristics']/*[local-name()='CharacteristicDefinitions']/*">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@id"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select=""/>
 				</xsl:variable>
 				<!--ModelAnnotation-->
 				<mech:ModelAnnotation>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="@id"/>
 					</dc:identifier>
@@ -60,19 +72,25 @@
 				</mech:ModelAnnotation>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/*[local-name()='Characteristics']/*[local-name()='CharacteristicDefinitions']/*">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/*[local-name()='DatumDefinitions']/*[local-name()='DatumDefinition']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@id"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="*[local-name()='DatumLabel']"/>
 				</xsl:variable>
 				<!--ModelAnnotation-->
 				<mech:ModelAnnotation>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="@id"/>
 					</dc:identifier>
@@ -82,19 +100,25 @@
 				</mech:ModelAnnotation>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/*[local-name()='DatumDefinitions']/*[local-name()='DatumDefinition']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/*[local-name()='Features']/*[local-name()='FeatureDefinitions']/*">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@id"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="@id, name()"/>
 				</xsl:variable>
 				<!--Face-->
 				<mech:Face>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="@id"/>
 					</dc:identifier>
@@ -104,19 +128,25 @@
 				</mech:Face>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/*[local-name()='Features']/*[local-name()='FeatureDefinitions']/*">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/*[local-name()='Product']/*[local-name()='PartNoteSet']/*[local-name()='PartNote'][@label='ID_NUMBER_MATERIAL']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="./*[local-name()='Text']"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="./*[local-name()='Text'], ../*[local-name()='PartNote'][@label='MATERIAL']/*[local-name()='Text']"/>
 				</xsl:variable>
 				<!--Material-->
 				<mech:Material>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="./*[local-name()='Text']"/>
 					</dc:identifier>
@@ -132,19 +162,25 @@
 				</mech:Material>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/*[local-name()='Product']/*[local-name()='PartNoteSet']/*[local-name()='PartNote'][@label='ID_NUMBER_MATERIAL']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="./*[local-name()='Text']"/>
 				</xsl:variable>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/*[local-name()='Header']/Author/*[local-name()='Organization']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
+					<xsl:value-of select="."/>
+				</xsl:variable>
+				<xsl:variable name="label">
 					<xsl:value-of select="."/>
 				</xsl:variable>
 				<!--OrganizationUnit-->
 				<org:OrganizationUnit>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="."/>
 					</dc:identifier>
@@ -154,19 +190,25 @@
 				</org:OrganizationUnit>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/*[local-name()='Header']/Author/*[local-name()='Organization']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="."/>
 				</xsl:variable>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/*[local-name()='Product']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="./*[local-name()='Header']/*[local-name()='File']/*[local-name()='Name']"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="./*[local-name()='PartNoteSet']/*[local-name()='PartNote'][@label='PART_NAME']/*[local-name()='Text']"/>
 				</xsl:variable>
 				<!--MechanicalComponent-->
 				<mech:MechanicalComponent>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="./*[local-name()='Header']/*[local-name()='File']/*[local-name()='Name']"/>
 					</dc:identifier>
@@ -179,7 +221,7 @@
 				</mech:MechanicalComponent>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/*[local-name()='Product']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="./*[local-name()='Header']/*[local-name()='File']/*[local-name()='Name']"/>
 				</xsl:variable>
 				<!--MechanicalComponent relations-->
@@ -198,14 +240,20 @@
 				</xsl:for-each>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/StandardsDefinitions/Standard">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@id"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="concat(*[local-name()='Organization']/StandardsOrganizationEnum,' ',Designator)"/>
 				</xsl:variable>
 				<!--Reference-->
 				<ctx:Reference>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="@id"/>
 					</dc:identifier>
@@ -215,7 +263,7 @@
 				</ctx:Reference>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='QIFDocument']/StandardsDefinitions/Standard">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 			</xsl:for-each>

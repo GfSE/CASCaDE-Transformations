@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:arch="http://omg.org/spec/CASCaRA/ProductArchitecture/" version="1">
+<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:arch="http://omg.org/spec/CASCaRA/ProductArchitecture/" version="1">
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
 			<xsl:for-each select="//*[local-name()='SPEC-OBJECT']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@IDENTIFIER"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="*[local-name()='VALUES']/*[./*[local-name()='DEFINITION']/*[starts-with(local-name(),'ATTRIBUTE-DEFINITION')]=//*[local-name()='SPEC-OBJECT-TYPE']/*[local-name()='SPEC-ATTRIBUTES']/*[@LONG-NAME='ReqIF.ForeignID']/@IDENTIFIER]/@THE-VALUE, *[local-name()='VALUES']/*[./*[local-name()='DEFINITION']/*[starts-with(local-name(),'ATTRIBUTE-DEFINITION')]=//*[local-name()='SPEC-OBJECT-TYPE']/*[local-name()='SPEC-ATTRIBUTES']/*[@LONG-NAME='ReqIF.Name' or @LONG-NAME='ReqIF.ChapterName']/@IDENTIFIER]/*[local-name()='THE-VALUE']|@LONG-NAME"/>
 				</xsl:variable>
 				<!--Requirement-->
 				<arch:Requirement>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="@IDENTIFIER"/>
 					</dc:identifier>
@@ -33,11 +39,11 @@
 				</arch:Requirement>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='SPEC-OBJECT']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@IDENTIFIER"/>
 				</xsl:variable>
 				<!--Requirement relations-->
-				<xsl:for-each select="//*[local-name()='SPEC-HIERARCHY'][./*[local-name()='OBJECT']/*[local-name()='SPEC-OBJECT-REF']=$input]/*[local-name()='CHILDREN']/*[local-name()='SPEC-HIERARCHY']/*[local-name()='OBJECT']/*[local-name()='SPEC-OBJECT-REF']">
+				<xsl:for-each select="//*[local-name()='SPEC-HIERARCHY'][./*[local-name()='OBJECT']/*[local-name()='SPEC-OBJECT-REF']='$input']/*[local-name()='CHILDREN']/*[local-name()='SPEC-HIERARCHY']/*[local-name()='OBJECT']/*[local-name()='SPEC-OBJECT-REF']">
 					<arch:Requirement_partOf_Requirement>
 						<xsl:attribute name="rdf:about">
 							<xsl:value-of select="concat($input,'_Requirement.partOf.Requirement_',.)"/>
@@ -51,7 +57,7 @@
 					</arch:Requirement_partOf_Requirement>
 				</xsl:for-each>
 				<!--Requirement relations-->
-				<xsl:for-each select="//*[local-name()='SPEC-RELATION'][./*[local-name()='TYPE']/*[local-name()='SPEC-RELATION-TYPE-REF']=//*[local-name()='SPEC-RELATION-TYPE'][@LONG-NAME='Generalization']/@IDENTIFIER and ./*[local-name()='SOURCE']/*[local-name()='SPEC-OBJECT-REF']=$input]/*[local-name()='TARGET']/*[local-name()='SPEC-OBJECT-REF']">
+				<xsl:for-each select="//*[local-name()='SPEC-RELATION'][./*[local-name()='TYPE']/*[local-name()='SPEC-RELATION-TYPE-REF']=//*[local-name()='SPEC-RELATION-TYPE'][@LONG-NAME='Generalization']/@IDENTIFIER and ./*[local-name()='SOURCE']/*[local-name()='SPEC-OBJECT-REF']='$input']/*[local-name()='TARGET']/*[local-name()='SPEC-OBJECT-REF']">
 					<arch:Requirement_specializes_Requirement>
 						<xsl:attribute name="rdf:about">
 							<xsl:value-of select="concat($input,'_Requirement.specializes.Requirement_',.)"/>
@@ -65,7 +71,7 @@
 					</arch:Requirement_specializes_Requirement>
 				</xsl:for-each>
 				<!--Requirement relations-->
-				<xsl:for-each select="//*[local-name()='SPEC-RELATION'][./*[local-name()='TYPE']/*[local-name()='SPEC-RELATION-TYPE-REF']=//*[local-name()='SPEC-RELATION-TYPE'][@LONG-NAME='realizes' or @LONG-NAME='Satisfy' or @LONG-NAME='Trace']/@IDENTIFIER and ./*[local-name()='SOURCE']/*[local-name()='SPEC-OBJECT-REF']=$input]/*[local-name()='TARGET']/*[local-name()='SPEC-OBJECT-REF']">
+				<xsl:for-each select="//*[local-name()='SPEC-RELATION'][./*[local-name()='TYPE']/*[local-name()='SPEC-RELATION-TYPE-REF']=//*[local-name()='SPEC-RELATION-TYPE'][@LONG-NAME='realizes' or @LONG-NAME='Satisfy' or @LONG-NAME='Trace']/@IDENTIFIER and ./*[local-name()='SOURCE']/*[local-name()='SPEC-OBJECT-REF']='$input']/*[local-name()='TARGET']/*[local-name()='SPEC-OBJECT-REF']">
 					<arch:Requirement_derivedFrom_Requirement>
 						<xsl:attribute name="rdf:about">
 							<xsl:value-of select="concat($input,'_Requirement.derivedFrom.Requirement_',.)"/>
@@ -79,7 +85,7 @@
 					</arch:Requirement_derivedFrom_Requirement>
 				</xsl:for-each>
 				<!--Requirement relations-->
-				<xsl:for-each select="//*[local-name()='SPEC-RELATION'][./*[local-name()='TYPE']/*[local-name()='SPEC-RELATION-TYPE-REF']=//*[local-name()='SPEC-RELATION-TYPE'][@LONG-NAME='Association']/@IDENTIFIER and ./*[local-name()='SOURCE']/*[local-name()='SPEC-OBJECT-REF']=$input]/*[local-name()='TARGET']/*[local-name()='SPEC-OBJECT-REF']">
+				<xsl:for-each select="//*[local-name()='SPEC-RELATION'][./*[local-name()='TYPE']/*[local-name()='SPEC-RELATION-TYPE-REF']=//*[local-name()='SPEC-RELATION-TYPE'][@LONG-NAME='Association']/@IDENTIFIER and ./*[local-name()='SOURCE']/*[local-name()='SPEC-OBJECT-REF']='$input']/*[local-name()='TARGET']/*[local-name()='SPEC-OBJECT-REF']">
 					<arch:Requirement_relatedTo_Requirement>
 						<xsl:attribute name="rdf:about">
 							<xsl:value-of select="concat($input,'_Requirement.relatedTo.Requirement_',.)"/>

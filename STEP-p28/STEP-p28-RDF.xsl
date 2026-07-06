@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:arch="http://omg.org/spec/CASCaRA/ProductArchitecture/" xmlns:mech="http://omg.org/spec/CASCaRA/MechanicalDesign/" xmlns:org="http://omg.org/spec/CASCaRA/Organization/" version="1">
+<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:arch="http://omg.org/spec/CASCaRA/ProductArchitecture/" xmlns:mech="http://omg.org/spec/CASCaRA/MechanicalDesign/" xmlns:org="http://omg.org/spec/CASCaRA/Organization/" version="1">
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
 			<xsl:for-each select="//*[local-name()='Representation'][@xsi:type='bom:Mechanism']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="*[local-name()='Name']/*[local-name()='CharacterString']"/>
 				</xsl:variable>
 				<!--KinematicMechanism-->
 				<mech:KinematicMechanism>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="@uid"/>
 					</dc:identifier>
@@ -21,7 +27,7 @@
 				</mech:KinematicMechanism>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Representation'][@xsi:type='bom:Mechanism']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 				<!--KinematicMechanism relations-->
@@ -40,14 +46,20 @@
 				</xsl:for-each>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Occurrence']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="*[local-name()='Id']/@id"/>
 				</xsl:variable>
 				<!--MechanicalComponent-->
 				<mech:MechanicalComponent>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="@uid"/>
 					</dc:identifier>
@@ -57,19 +69,25 @@
 				</mech:MechanicalComponent>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Occurrence']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Organization']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="*[local-name()='Name']/*[local-name()='CharacterString']"/>
 				</xsl:variable>
 				<!--OrganizationUnit-->
 				<org:OrganizationUnit>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="@uid"/>
 					</dc:identifier>
@@ -79,7 +97,7 @@
 				</org:OrganizationUnit>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Organization']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 				<!--OrganizationUnit relations-->
@@ -98,14 +116,20 @@
 				</xsl:for-each>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Part']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="*[local-name()='Name']/*[local-name()='CharacterString']|*[local-name()='Id']/*[local-name()='Identifier']/@id"/>
 				</xsl:variable>
 				<!--MechanicalComponent-->
 				<mech:MechanicalComponent>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="@uid"/>
 					</dc:identifier>
@@ -118,7 +142,7 @@
 				</mech:MechanicalComponent>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Part']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 				<!--MechanicalComponent relations-->
@@ -164,7 +188,7 @@
 					</mech:SystemComponent_fulfils_Requirement>
 				</xsl:for-each>
 				<!--MechanicalComponent relations-->
-				<xsl:for-each select="//*[local-name()='Requirement'][//*[local-name()='RequirementView']/@uid=$input]/*[local-name()='uid']">
+				<xsl:for-each select="//*[local-name()='Requirement'][//*[local-name()='RequirementView']/@uid='$input']/*[local-name()='uid']">
 					<mech:SystemComponent_fulfils_Requirement>
 						<xsl:attribute name="rdf:about">
 							<xsl:value-of select="concat($input,'_SystemComponent.fulfils.Requirement_',.)"/>
@@ -179,14 +203,20 @@
 				</xsl:for-each>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Project']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="*[local-name()='Id']/@id, *[local-name()='Name']/*[local-name()='CharacterString']"/>
 				</xsl:variable>
 				<!--Project-->
 				<org:Project>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="@uid"/>
 					</dc:identifier>
@@ -199,7 +229,7 @@
 				</org:Project>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Project']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 				<!--Project relations-->
@@ -218,14 +248,20 @@
 				</xsl:for-each>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Requirement']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
+				</xsl:variable>
+				<xsl:variable name="label">
+					<xsl:value-of select="*[local-name()='Id']/*[local-name()='Identifier']/@id"/>
 				</xsl:variable>
 				<!--Requirement-->
 				<arch:Requirement>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$input"/>
+						<xsl:value-of select="$identifier"/>
 					</xsl:attribute>
+					<xsl:element name="rdfs:label">
+						<xsl:value-of select="$label"/>
+					</xsl:element>
 					<dc:identifier>
 						<xsl:value-of select="@uid"/>
 					</dc:identifier>
@@ -238,7 +274,7 @@
 				</arch:Requirement>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Requirement']">
-				<xsl:variable name="input">
+				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 			</xsl:for-each>
