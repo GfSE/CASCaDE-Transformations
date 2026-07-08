@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:arch="http://omg.org/spec/CASCaRA/ProductArchitecture/" xmlns:mech="http://omg.org/spec/CASCaRA/MechanicalDesign/" xmlns:org="http://omg.org/spec/CASCaRA/Organization/" version="1">
+<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:default="http://www.omg.org/spec/CASCaRA/ontology/" xmlns:cas="http://www.omg.org/spec/CASCaRA/metamodel/" xmlns:arch="http://www.omg.org/spec/CASCaRA/ontology/ProductArchitecture/" xmlns:mech="http://www.omg.org/spec/CASCaRA/ontology/MechanicalDesign/" xmlns:org="http://www.omg.org/spec/CASCaRA/ontology/Organization/" version="1">
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
+			<owl:Ontology>
+				<xsl:attribute name="rdf:about">
+					<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+				</xsl:attribute>
+				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
+			</owl:Ontology>
 			<xsl:for-each select="//*[local-name()='Representation'][@xsi:type='bom:Mechanism']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="*[local-name()='Name']/*[local-name()='CharacterString']"/>
+					<xsl:value-of select="normalize-space(*[local-name()='Name']/*[local-name()='CharacterString'])"/>
 				</xsl:variable>
 				<!--KinematicMechanism-->
 				<mech:KinematicMechanism>
@@ -50,7 +56,7 @@
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="*[local-name()='Id']/@id"/>
+					<xsl:value-of select="normalize-space(*[local-name()='Id']/@id)"/>
 				</xsl:variable>
 				<!--MechanicalComponent-->
 				<mech:MechanicalComponent>
@@ -78,7 +84,7 @@
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="*[local-name()='Name']/*[local-name()='CharacterString']"/>
+					<xsl:value-of select="normalize-space(*[local-name()='Name']/*[local-name()='CharacterString'])"/>
 				</xsl:variable>
 				<!--OrganizationUnit-->
 				<org:OrganizationUnit>
@@ -120,7 +126,7 @@
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="*[local-name()='Name']/*[local-name()='CharacterString']|*[local-name()='Id']/*[local-name()='Identifier']/@id"/>
+					<xsl:value-of select="normalize-space(*[local-name()='Name']/*[local-name()='CharacterString']|*[local-name()='Id']/*[local-name()='Identifier']/@id)"/>
 				</xsl:variable>
 				<!--MechanicalComponent-->
 				<mech:MechanicalComponent>
@@ -136,9 +142,9 @@
 					<dc:title>
 						<xsl:value-of select="*[local-name()='Name']/*[local-name()='CharacterString']|*[local-name()='Id']/*[local-name()='Identifier']/@id"/>
 					</dc:title>
-					<mass xmlns="">
+					<default:mass>
 						<xsl:value-of select="*[local-name()='Versions']/*[local-name()='PartVersion']/*[local-name()='Views']/*[local-name()='PartView']/*[local-name()='PropertyValueAssignment']/*[local-name()='AssignedPropertyValues']/*[local-name()='PropertyValue'][./@uid='PRV--26']/*[local-name()='ValueComponent']/*[local-name()='CharacterString']"/>
-					</mass>
+					</default:mass>
 				</mech:MechanicalComponent>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Part']">
@@ -207,7 +213,7 @@
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="concat(*[local-name()='Id']/@id, *[local-name()='Name']/*[local-name()='CharacterString'])"/>
+					<xsl:value-of select="normalize-space(concat(*[local-name()='Id']/@id, ' ', *[local-name()='Name']/*[local-name()='CharacterString']))"/>
 				</xsl:variable>
 				<!--Project-->
 				<org:Project>
@@ -220,9 +226,9 @@
 					<dc:identifier>
 						<xsl:value-of select="@uid"/>
 					</dc:identifier>
-					<number xmlns="">
+					<default:number>
 						<xsl:value-of select="*[local-name()='Id']/@id"/>
-					</number>
+					</default:number>
 					<dc:title>
 						<xsl:value-of select="*[local-name()='Name']/*[local-name()='CharacterString']"/>
 					</dc:title>
@@ -252,7 +258,7 @@
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="*[local-name()='Id']/*[local-name()='Identifier']/@id"/>
+					<xsl:value-of select="normalize-space(*[local-name()='Id']/*[local-name()='Identifier']/@id)"/>
 				</xsl:variable>
 				<!--Requirement-->
 				<arch:Requirement>
@@ -265,9 +271,9 @@
 					<dc:identifier>
 						<xsl:value-of select="@uid"/>
 					</dc:identifier>
-					<number xmlns="">
+					<default:number>
 						<xsl:value-of select="*[local-name()='Id']/*[local-name()='Identifier']/@id"/>
-					</number>
+					</default:number>
 					<dc:description>
 						<xsl:value-of select="*[local-name()='Name']/*[local-name()='CharacterString']"/>
 					</dc:description>

@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:ee="http://omg.org/spec/CASCaRA/ElectricElectronicDesign/" xmlns:mech="http://omg.org/spec/CASCaRA/MechanicalDesign/" xmlns:org="http://omg.org/spec/CASCaRA/Organization/" version="1">
+<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:default="http://www.omg.org/spec/CASCaRA/ontology/" xmlns:cas="http://www.omg.org/spec/CASCaRA/metamodel/" xmlns:ee="http://www.omg.org/spec/CASCaRA/ontology/ElectricElectronicDesign/" xmlns:mech="http://www.omg.org/spec/CASCaRA/ontology/MechanicalDesign/" xmlns:org="http://www.omg.org/spec/CASCaRA/ontology/Organization/" version="1">
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
+			<owl:Ontology>
+				<xsl:attribute name="rdf:about">
+					<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+				</xsl:attribute>
+				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
+			</owl:Ontology>
 			<xsl:for-each select="/*[local-name()='IPC-2581']/*[local-name()='Bom']/*[local-name()='BomItem']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@OEMDesignNumberRef"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@OEMDesignNumberRef"/>
+					<xsl:value-of select="normalize-space(@OEMDesignNumberRef)"/>
 				</xsl:variable>
 				<!--ElectricElectronicComponent-->
 				<ee:ElectricElectronicComponent>
@@ -50,7 +56,7 @@
 					<xsl:value-of select="@refDes"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@part"/>
+					<xsl:value-of select="normalize-space(@part)"/>
 				</xsl:variable>
 				<!--MechanicalComponent-->
 				<mech:MechanicalComponent>
@@ -78,7 +84,7 @@
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@code"/>
+					<xsl:value-of select="normalize-space(@code)"/>
 				</xsl:variable>
 				<!--OrganizationUnit-->
 				<org:OrganizationUnit>
@@ -91,9 +97,9 @@
 					<dc:identifier>
 						<xsl:value-of select="@id"/>
 					</dc:identifier>
-					<number xmlns="">
+					<default:number>
 						<xsl:value-of select="@code"/>
-					</number>
+					</default:number>
 				</org:OrganizationUnit>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='IPC-2581']/*[local-name()='LogisticHeader']/*[local-name()='Enterprise']">
@@ -106,7 +112,7 @@
 					<xsl:value-of select="@name"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--Person-->
 				<org:Person>
@@ -119,9 +125,9 @@
 					<dc:identifier>
 						<xsl:value-of select="@name"/>
 					</dc:identifier>
-					<lastname xmlns="">
+					<default:lastname>
 						<xsl:value-of select="@name"/>
-					</lastname>
+					</default:lastname>
 				</org:Person>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='IPC-2581']/*[local-name()='LogisticHeader']/*[local-name()='Person']">
@@ -148,7 +154,7 @@
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@roleFunction"/>
+					<xsl:value-of select="normalize-space(@roleFunction)"/>
 				</xsl:variable>
 				<!--Role-->
 				<org:Role>

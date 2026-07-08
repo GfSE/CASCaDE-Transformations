@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:arch="http://omg.org/spec/CASCaRA/ProductArchitecture/" xmlns:mech="http://omg.org/spec/CASCaRA/MechanicalDesign/" xmlns:org="http://omg.org/spec/CASCaRA/Organization/" xmlns:sys="http://omg.org/spec/CASCaRA/SystemsDesign/" version="1">
+<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:default="http://www.omg.org/spec/CASCaRA/ontology/" xmlns:cas="http://www.omg.org/spec/CASCaRA/metamodel/" xmlns:arch="http://www.omg.org/spec/CASCaRA/ontology/ProductArchitecture/" xmlns:mech="http://www.omg.org/spec/CASCaRA/ontology/MechanicalDesign/" xmlns:org="http://www.omg.org/spec/CASCaRA/ontology/Organization/" xmlns:sys="http://www.omg.org/spec/CASCaRA/ontology/SystemsDesign/" version="1">
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
+			<owl:Ontology>
+				<xsl:attribute name="rdf:about">
+					<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+				</xsl:attribute>
+				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
+			</owl:Ontology>
 			<xsl:for-each select="//*[@xmi:type='uml:AcceptEventAction']/ancestor-or-self::*">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="concat(//*[@base_Class='$input']/@Id, @name)"/>
+					<xsl:value-of select="normalize-space(concat(//*[@base_Class='$input']/@Id, ' ', @name))"/>
 				</xsl:variable>
 				<!--ComponentState-->
 				<sys:ComponentState>
@@ -21,15 +27,15 @@
 					<dc:identifier>
 						<xsl:value-of select="@xmi:id"/>
 					</dc:identifier>
-					<number xmlns="">
+					<default:number>
 						<xsl:value-of select="//*[@base_Class='$input']/@Id"/>
-					</number>
+					</default:number>
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="@xmi:type"/>
-					</type>
+					</default:type>
 				</sys:ComponentState>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:AcceptEventAction']/ancestor-or-self::*">
@@ -56,7 +62,7 @@
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--Role-->
 				<org:Role>
@@ -112,7 +118,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--Role-->
 				<org:Role>
@@ -168,7 +174,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--SystemComponent-->
 				<sys:SystemComponent>
@@ -184,9 +190,9 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="@xmi:type"/>
-					</type>
+					</default:type>
 				</sys:SystemComponent>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:Class' and (@xmi:id=//*[local-name()='Block']/@base_Class or @xmi:id=//*[local-name()='element'][*[local-name()='properties']/@stereotype='Logical block']/@xmi:idref)]/ancestor-or-self::*">
@@ -255,7 +261,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--SystemComponent-->
 				<sys:SystemComponent>
@@ -271,9 +277,9 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="@xmi:type"/>
-					</type>
+					</default:type>
 				</sys:SystemComponent>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:Property' and local-name()!='ownedEnd' and (./*[local-name()='type']/@xmi:idref=//*[local-name()='Block']/@base_Class or ./*[local-name()='type']/@xmi:idref=//*[local-name()='element'][*[local-name()='properties']/@stereotype='Logical block']/@xmi:idref)]">
@@ -342,7 +348,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--SystemComponent-->
 				<sys:SystemComponent>
@@ -358,9 +364,9 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="@xmi:type"/>
-					</type>
+					</default:type>
 				</sys:SystemComponent>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:Component']/ancestor-or-self::*">
@@ -429,7 +435,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="concat(//*[@base_Class='$input']/@Id, @name)"/>
+					<xsl:value-of select="normalize-space(concat(//*[@base_Class='$input']/@Id, ' ', @name))"/>
 				</xsl:variable>
 				<!--Deviation-->
 				<sys:Deviation>
@@ -442,15 +448,15 @@
 					<dc:identifier>
 						<xsl:value-of select="@xmi:id"/>
 					</dc:identifier>
-					<number xmlns="">
+					<default:number>
 						<xsl:value-of select="//*[@base_Class='$input']/@Id"/>
-					</number>
+					</default:number>
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="@xmi:type"/>
-					</type>
+					</default:type>
 				</sys:Deviation>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:UseCase' and starts-with(@name, 'Fehlfunktion')]/ancestor-or-self::*">
@@ -477,7 +483,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--Function-->
 				<arch:Function>
@@ -493,9 +499,9 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="@xmi:type"/>
-					</type>
+					</default:type>
 				</arch:Function>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:Activity']/ancestor-or-self::*">
@@ -592,7 +598,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--ComponentInterface-->
 				<sys:ComponentInterface>
@@ -608,9 +614,9 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="@xmi:type"/>
-					</type>
+					</default:type>
 				</sys:ComponentInterface>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:Class' and @xmi:id=//*[local-name()='InterfaceBlock']/@base_Class]/ancestor-or-self::*">
@@ -637,7 +643,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--SystemComponent-->
 				<sys:SystemComponent>
@@ -653,9 +659,9 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="@xmi:type"/>
-					</type>
+					</default:type>
 				</sys:SystemComponent>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:Manifestation']/ancestor-or-self::*">
@@ -724,7 +730,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--ComponentInterface-->
 				<sys:ComponentInterface>
@@ -740,12 +746,12 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="@xmi:type"/>
-					</type>
-					<parent xmlns="">
+					</default:type>
+					<default:parent>
 						<xsl:value-of select="../@name"/>
-					</parent>
+					</default:parent>
 				</sys:ComponentInterface>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:Port']">
@@ -786,7 +792,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="concat(//*[local-name()='Requirement'][@base_Class='$identifier']/@*[name()='id' or name()='Id'], @name)"/>
+					<xsl:value-of select="normalize-space(concat(//*[local-name()='Requirement'][@base_Class='$identifier']/@*[name()='id' or name()='Id'], ' ', @name))"/>
 				</xsl:variable>
 				<!--Requirement-->
 				<arch:Requirement>
@@ -799,18 +805,18 @@
 					<dc:identifier>
 						<xsl:value-of select="@xmi:id"/>
 					</dc:identifier>
-					<number xmlns="">
+					<default:number>
 						<xsl:value-of select="//*[local-name()='Requirement'][@base_Class='$identifier']/@*[name()='id' or name()='Id']"/>
-					</number>
+					</default:number>
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
 					<dc:description>
 						<xsl:value-of select="//*[local-name()='Requirement'][@base_Class='$identifier']/@*[name()='text' or name()='Text']"/>
 					</dc:description>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="@xmi:type"/>
-					</type>
+					</default:type>
 				</arch:Requirement>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:Class' and @xmi:id=//*[local-name()='Requirement']/@base_Class]/ancestor-or-self::*">
@@ -851,7 +857,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="concat(@id|@Id, @name)"/>
+					<xsl:value-of select="normalize-space(concat(@id|@Id, ' ', @name))"/>
 				</xsl:variable>
 				<!--StakeholderRequirement-->
 				<arch:StakeholderRequirement>
@@ -864,18 +870,18 @@
 					<dc:identifier>
 						<xsl:value-of select="@xmi:id"/>
 					</dc:identifier>
-					<number xmlns="">
+					<default:number>
 						<xsl:value-of select="@id|@Id"/>
-					</number>
+					</default:number>
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
 					<dc:description>
 						<xsl:value-of select="//*[@xmi:id='$input']/@Text"/>
 					</dc:description>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="//*[@xmi:id=//*[@xmi:id='$input']/@base_Class]/@name"/>
-					</type>
+					</default:type>
 				</arch:StakeholderRequirement>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:Class' and @xmi:id=//*[local-name()='StakeholderRequirement']/@base_Class]/ancestor-or-self::*">
@@ -916,7 +922,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--MechanicalComponent-->
 				<mech:MechanicalComponent>
@@ -932,9 +938,9 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="*[local-name()='ownedAttribute']/@name"/>
-					</type>
+					</default:type>
 				</mech:MechanicalComponent>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:Class' and @xmi:id=(//local-name()='System']/@base_Class)]/ancestor-or-self::*">
@@ -989,7 +995,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="concat(@id|@Id, //*[@xmi:id='$input']/@name)"/>
+					<xsl:value-of select="normalize-space(concat(@id|@Id, ' ', //*[@xmi:id='$input']/@name))"/>
 				</xsl:variable>
 				<!--SystemRequirement-->
 				<arch:SystemRequirement>
@@ -1002,18 +1008,18 @@
 					<dc:identifier>
 						<xsl:value-of select="@xmi:id"/>
 					</dc:identifier>
-					<number xmlns="">
+					<default:number>
 						<xsl:value-of select="@id|@Id"/>
-					</number>
+					</default:number>
 					<dc:title>
 						<xsl:value-of select="//*[@xmi:id='$input']/@name"/>
 					</dc:title>
 					<dc:description>
 						<xsl:value-of select="@text|@Text"/>
 					</dc:description>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="//*[@xmi:id=//*[@xmi:id='$input']/@base_Class]/@name"/>
-					</type>
+					</default:type>
 				</arch:SystemRequirement>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:Class' and (@xmi:id=//*[local-name()='functionalRequirement']/@base_Class)]/ancestor-or-self::*">
@@ -1054,7 +1060,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="concat(@id|@Id, @name)"/>
+					<xsl:value-of select="normalize-space(concat(@id|@Id, ' ', @name))"/>
 				</xsl:variable>
 				<!--SystemRequirement-->
 				<arch:SystemRequirement>
@@ -1067,18 +1073,18 @@
 					<dc:identifier>
 						<xsl:value-of select="@xmi:id"/>
 					</dc:identifier>
-					<number xmlns="">
+					<default:number>
 						<xsl:value-of select="@id|@Id"/>
-					</number>
+					</default:number>
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
 					<dc:description>
 						<xsl:value-of select="//*[@xmi:id='$input']/@Text"/>
 					</dc:description>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="//*[@xmi:id=//*[@xmi:id='$input']/@base_Class]/@name"/>
-					</type>
+					</default:type>
 				</arch:SystemRequirement>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:Class' and @xmi:id=//*[local-name()='SystemRequirement']/@base_Class]/ancestor-or-self::*">
@@ -1119,7 +1125,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--MechanicalComponent-->
 				<mech:MechanicalComponent>
@@ -1135,9 +1141,9 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="*[local-name()='ownedAttribute']/@name"/>
-					</type>
+					</default:type>
 				</mech:MechanicalComponent>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:Class' and @xmi:id=//*[local-name()='TechnicalElement']/@base_Class]">
@@ -1206,7 +1212,7 @@
 					<xsl:value-of select="@xmi:id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--UseCase-->
 				<arch:UseCase>
@@ -1222,9 +1228,9 @@
 					<dc:title>
 						<xsl:value-of select="@name"/>
 					</dc:title>
-					<type xmlns="">
+					<default:type>
 						<xsl:value-of select="@xmi:type"/>
-					</type>
+					</default:type>
 				</arch:UseCase>
 			</xsl:for-each>
 			<xsl:for-each select="//*[@xmi:type='uml:UseCase']/ancestor-or-self::*">

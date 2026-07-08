@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:sys="http://omg.org/spec/CASCaRA/SystemsDesign/" xmlns:ver="http://omg.org/spec/CASCaRA/ProductVerification/" version="1">
+<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:default="http://www.omg.org/spec/CASCaRA/ontology/" xmlns:cas="http://www.omg.org/spec/CASCaRA/metamodel/" xmlns:sys="http://www.omg.org/spec/CASCaRA/ontology/SystemsDesign/" xmlns:ver="http://www.omg.org/spec/CASCaRA/ontology/ProductVerification/" version="1">
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
+			<owl:Ontology>
+				<xsl:attribute name="rdf:about">
+					<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+				</xsl:attribute>
+				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
+			</owl:Ontology>
 			<xsl:for-each select="//(*[local-name()='AoTest']|*[local-name()='AoSubTest']|*[local-name()='AoTestAbstract'])">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Id']"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="*[local-name()='Name']"/>
+					<xsl:value-of select="normalize-space(*[local-name()='Name'])"/>
 				</xsl:variable>
 				<!--VerificationRun-->
 				<ver:VerificationRun>
@@ -24,12 +30,12 @@
 					<dc:title>
 						<xsl:value-of select="*[local-name()='Name']"/>
 					</dc:title>
-					<dateTime xmlns="">
+					<default:dateTime>
 						<xsl:value-of select="*[local-name()='DateCreated']"/>
-					</dateTime>
-					<type xmlns="">
+					</default:dateTime>
+					<default:type>
 						<xsl:value-of select="*[local-name()='Classification']"/>
-					</type>
+					</default:type>
 				</ver:VerificationRun>
 			</xsl:for-each>
 			<xsl:for-each select="//(*[local-name()='AoTest']|*[local-name()='AoSubTest']|*[local-name()='AoTestAbstract'])">
@@ -56,7 +62,7 @@
 					<xsl:value-of select="*[local-name()='Id']"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="*[local-name()='Name']"/>
+					<xsl:value-of select="normalize-space(*[local-name()='Name'])"/>
 				</xsl:variable>
 				<!--VerificationResource-->
 				<ver:VerificationResource>
@@ -72,15 +78,15 @@
 					<dc:title>
 						<xsl:value-of select="*[local-name()='Name']"/>
 					</dc:title>
-					<dateTime xmlns="">
+					<default:dateTime>
 						<xsl:value-of select="*[local-name()='DateCreated']"/>
-					</dateTime>
-					<type xmlns="">
+					</default:dateTime>
+					<default:type>
 						<xsl:value-of select="*[local-name()='Classification']"/>
-					</type>
-					<revision xmlns="">
+					</default:type>
+					<default:revision>
 						<xsl:value-of select="*[local-name()='Version']"/>
-					</revision>
+					</default:revision>
 				</ver:VerificationResource>
 			</xsl:for-each>
 			<xsl:for-each select="//*[contains(name(),'TestEquipment')]">
@@ -107,7 +113,7 @@
 					<xsl:value-of select="*[local-name()='application_attribute'][name='Id']@uid"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="*[local-name()='Id']/*[local-name()='Identifier']/@id"/>
+					<xsl:value-of select="normalize-space(*[local-name()='Id']/*[local-name()='Identifier']/@id)"/>
 				</xsl:variable>
 				<!--VerificationResource-->
 				<ver:VerificationResource>
@@ -123,9 +129,9 @@
 					<dc:title>
 						<xsl:value-of select="*[local-name()='Id']/*[local-name()='Identifier']/@id"/>
 					</dc:title>
-					<mass xmlns="">
+					<default:mass>
 						<xsl:value-of select="*[local-name()='Versions']/*[local-name()='PartVersion']/*[local-name()='Views']/*[local-name()='PartView']/*[local-name()='PropertyValueAssignment']/*[local-name()='AssignedPropertyValues']/*[local-name()='PropertyValue'][./@uid='PRV--26']/*[local-name()='ValueComponent']/*[local-name()='CharacterString']"/>
-					</mass>
+					</default:mass>
 				</ver:VerificationResource>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='TestEquipmentPart']">
@@ -194,7 +200,7 @@
 					<xsl:value-of select="*[local-name()='Id']"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="*[local-name()='Name']"/>
+					<xsl:value-of select="normalize-space(*[local-name()='Name'])"/>
 				</xsl:variable>
 				<!--SystemComponent-->
 				<sys:SystemComponent>
@@ -210,12 +216,12 @@
 					<dc:title>
 						<xsl:value-of select="*[local-name()='Name']"/>
 					</dc:title>
-					<dateTime xmlns="">
+					<default:dateTime>
 						<xsl:value-of select="*[local-name()='DateCreated']"/>
-					</dateTime>
-					<type xmlns="">
+					</default:dateTime>
+					<default:type>
 						<xsl:value-of select="*[local-name()='Classification']"/>
-					</type>
+					</default:type>
 				</sys:SystemComponent>
 			</xsl:for-each>
 			<xsl:for-each select="//(*[local-name()='AoUnitUnderTest']|*[local-name()='AoUnitUnderTestPart'])">

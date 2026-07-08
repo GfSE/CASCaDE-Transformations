@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns="http://omg.org/spec/CASCaRA/" xmlns:cas="http://omg.org/spec/CASCaRA/Metamodel/" xmlns:arch="http://omg.org/spec/CASCaRA/ProductArchitecture/" xmlns:mech="http://omg.org/spec/CASCaRA/MechanicalDesign/" xmlns:org="http://omg.org/spec/CASCaRA/Organization/" xmlns:sys="http://omg.org/spec/CASCaRA/SystemsDesign/" version="1">
+<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:default="http://www.omg.org/spec/CASCaRA/ontology/" xmlns:cas="http://www.omg.org/spec/CASCaRA/metamodel/" xmlns:arch="http://www.omg.org/spec/CASCaRA/ontology/ProductArchitecture/" xmlns:mech="http://www.omg.org/spec/CASCaRA/ontology/MechanicalDesign/" xmlns:org="http://www.omg.org/spec/CASCaRA/ontology/Organization/" xmlns:sys="http://www.omg.org/spec/CASCaRA/ontology/SystemsDesign/" version="1">
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
+			<owl:Ontology>
+				<xsl:attribute name="rdf:about">
+					<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+				</xsl:attribute>
+				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
+			</owl:Ontology>
 			<xsl:for-each select="//*[@xsi:type='org.polarsys.capella.core.data.oa:Entity']/ancestor-or-self::*">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--Role-->
 				<org:Role>
@@ -67,7 +73,7 @@
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--ComponentConnection-->
 				<sys:ComponentConnection>
@@ -126,7 +132,7 @@
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--ComponentInterface-->
 				<sys:ComponentInterface>
@@ -171,7 +177,7 @@
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--Function-->
 				<arch:Function>
@@ -230,7 +236,7 @@
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--UseCase-->
 				<arch:UseCase>
@@ -289,7 +295,7 @@
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--MechanicalComponent-->
 				<mech:MechanicalComponent>
@@ -334,7 +340,7 @@
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 				<xsl:variable name="label">
-					<xsl:value-of select="@name"/>
+					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
 				<!--Function-->
 				<arch:Function>
