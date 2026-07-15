@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rdf:RDF xmlns:auto="http://iurianu.rocks/wp-content/uploads/cdn/auto.owl/#" xmlns:arch="http://www.omg.org/spec/CASCaRA/ontology/ProductArchitecture/" xmlns:cas="http://www.omg.org/spec/CASCaRA/metamodel/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:default="http://www.omg.org/spec/CASCaRA/ontology/" xmlns:mech="http://www.omg.org/spec/CASCaRA/ontology/MechanicalDesign/" xmlns:org="http://www.omg.org/spec/CASCaRA/ontology/Organization/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<owl:Ontology rdf:about="http://www.example.org/idrootx2x0/">
+		<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
+		<owl:imports rdf:resource="http://iurianu.rocks/wp-content/uploads/cdn/auto.owl/#"/>
+	</owl:Ontology>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__28">
+		<rdfs:type>auto:MotorizedRoadVehicle</rdfs:type>
+		<rdfs:label>Bogie Skeleton.1</rdfs:label>
+		<default:identifier>SO__28</default:identifier>
+		<default:title>Bogie Skeleton.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__100">
+		<rdfs:label>Channel Connector Two-Sided.1</rdfs:label>
+		<default:identifier>SO__100</default:identifier>
+		<default:title>Channel Connector Two-Sided.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__164">
+		<rdfs:label>Channel Connector Two-Sided.2</rdfs:label>
+		<default:identifier>SO__164</default:identifier>
+		<default:title>Channel Connector Two-Sided.2</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__48">
+		<rdfs:label>Channel Connector Skeleton.1</rdfs:label>
+		<default:identifier>SO__48</default:identifier>
+		<default:title>Channel Connector Skeleton.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__60">
+		<rdfs:label>Channel Connector Skeleton.1_1</rdfs:label>
+		<default:identifier>SO__60</default:identifier>
+		<default:title>Channel Connector Skeleton.1_1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__94">
+		<rdfs:label>Channel Connector One-Sided.1</rdfs:label>
+		<default:identifier>SO__94</default:identifier>
+		<default:title>Channel Connector One-Sided.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__97">
+		<rdfs:label>Channel Connector One-Sided.2</rdfs:label>
+		<default:identifier>SO__97</default:identifier>
+		<default:title>Channel Connector One-Sided.2</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__114">
+		<rdfs:label>Channel Connector One-Sided.1_1</rdfs:label>
+		<default:identifier>SO__114</default:identifier>
+		<default:title>Channel Connector One-Sided.1_1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__71">
+		<rdfs:label>Channel Connector.1</rdfs:label>
+		<default:identifier>SO__71</default:identifier>
+		<default:title>Channel Connector.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__82">
+		<rdfs:label>6-32_SHCS X 0.250.1</rdfs:label>
+		<default:identifier>SO__82</default:identifier>
+		<default:title>6-32_SHCS X 0.250.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__85">
+		<rdfs:label>6-32_SHCS X 0.250.2</rdfs:label>
+		<default:identifier>SO__85</default:identifier>
+		<default:title>6-32_SHCS X 0.250.2</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__88">
+		<rdfs:label>6-32_SHCS X 0.250.3</rdfs:label>
+		<default:identifier>SO__88</default:identifier>
+		<default:title>6-32_SHCS X 0.250.3</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__91">
+		<rdfs:label>6-32_SHCS X 0.250.4</rdfs:label>
+		<default:identifier>SO__91</default:identifier>
+		<default:title>6-32_SHCS X 0.250.4</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__111">
+		<rdfs:label>1.5 Aluminum Channel.1</rdfs:label>
+		<default:identifier>SO__111</default:identifier>
+		<default:title>1.5 Aluminum Channel.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__125">
+		<rdfs:label>3 Aluminum Channel.1</rdfs:label>
+		<default:identifier>SO__125</default:identifier>
+		<default:title>3 Aluminum Channel.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__167">
+		<rdfs:label>3 Aluminum Channel.2</rdfs:label>
+		<default:identifier>SO__167</default:identifier>
+		<default:title>3 Aluminum Channel.2</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__136">
+		<rdfs:label>Pattern F Bracket.1</rdfs:label>
+		<default:identifier>SO__136</default:identifier>
+		<default:title>Pattern F Bracket.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__139">
+		<rdfs:label>Pattern F Bracket.2</rdfs:label>
+		<default:identifier>SO__139</default:identifier>
+		<default:title>Pattern F Bracket.2</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__150">
+		<rdfs:label>3 Aluminum Channel Mod.1</rdfs:label>
+		<default:identifier>SO__150</default:identifier>
+		<default:title>3 Aluminum Channel Mod.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__161">
+		<rdfs:label>3.75 Aluminum Channel.1</rdfs:label>
+		<default:identifier>SO__161</default:identifier>
+		<default:title>3.75 Aluminum Channel.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__259">
+		<rdfs:label>Triple Spacer Attachment Two-Sided.1</rdfs:label>
+		<default:identifier>SO__259</default:identifier>
+		<default:title>Triple Spacer Attachment Two-Sided.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__313">
+		<rdfs:label>Triple Spacer Attachment Two-Sided.2</rdfs:label>
+		<default:identifier>SO__313</default:identifier>
+		<default:title>Triple Spacer Attachment Two-Sided.2</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__187">
+		<rdfs:label>Traverse Attachment Skeleton.1</rdfs:label>
+		<default:identifier>SO__187</default:identifier>
+		<default:title>Traverse Attachment Skeleton.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__199">
+		<rdfs:label>Traverse Attachment Skeleton.1_1</rdfs:label>
+		<default:identifier>SO__199</default:identifier>
+		<default:title>Traverse Attachment Skeleton.1_1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__271">
+		<rdfs:label>Traverse Attachment Skeleton.1_2</rdfs:label>
+		<default:identifier>SO__271</default:identifier>
+		<default:title>Traverse Attachment Skeleton.1_2</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__283">
+		<rdfs:label>Traverse Attachment Skeleton.1_3</rdfs:label>
+		<default:identifier>SO__283</default:identifier>
+		<default:title>Traverse Attachment Skeleton.1_3</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__253">
+		<rdfs:label>Triple Spacer Attachment One-Sided.1</rdfs:label>
+		<default:identifier>SO__253</default:identifier>
+		<default:title>Triple Spacer Attachment One-Sided.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__256">
+		<rdfs:label>Triple Spacer Attachment One-Sided.2</rdfs:label>
+		<default:identifier>SO__256</default:identifier>
+		<default:title>Triple Spacer Attachment One-Sided.2</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__210">
+		<rdfs:label>6-32_SHCS X 0.750.1</rdfs:label>
+		<default:identifier>SO__210</default:identifier>
+		<default:title>6-32_SHCS X 0.750.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__235">
+		<rdfs:label>6-32_SHCS X 0.750.2</rdfs:label>
+		<default:identifier>SO__235</default:identifier>
+		<default:title>6-32_SHCS X 0.750.2</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__244">
+		<rdfs:label>6-32_SHCS X 0.750.3</rdfs:label>
+		<default:identifier>SO__244</default:identifier>
+		<default:title>6-32_SHCS X 0.750.3</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__286">
+		<rdfs:label>6-32_SHCS X 0.750.1_1</rdfs:label>
+		<default:identifier>SO__286</default:identifier>
+		<default:title>6-32_SHCS X 0.750.1_1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__295">
+		<rdfs:label>6-32_SHCS X 0.750.2_1</rdfs:label>
+		<default:identifier>SO__295</default:identifier>
+		<default:title>6-32_SHCS X 0.750.2_1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__221">
+		<rdfs:label>6-32_L0_25 Spacer.1</rdfs:label>
+		<default:identifier>SO__221</default:identifier>
+		<default:title>6-32_L0_25 Spacer.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__238">
+		<rdfs:label>6-32_L0_25 Spacer.2</rdfs:label>
+		<default:identifier>SO__238</default:identifier>
+		<default:title>6-32_L0_25 Spacer.2</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__247">
+		<rdfs:label>6-32_L0_25 Spacer.3</rdfs:label>
+		<default:identifier>SO__247</default:identifier>
+		<default:title>6-32_L0_25 Spacer.3</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__289">
+		<rdfs:label>6-32_L0_25 Spacer.1_1</rdfs:label>
+		<default:identifier>SO__289</default:identifier>
+		<default:title>6-32_L0_25 Spacer.1_1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__298">
+		<rdfs:label>6-32_L0_25 Spacer.2_1</rdfs:label>
+		<default:identifier>SO__298</default:identifier>
+		<default:title>6-32_L0_25 Spacer.2_1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__232">
+		<rdfs:label>hex_nut_6-32.1</rdfs:label>
+		<default:identifier>SO__232</default:identifier>
+		<default:title>hex_nut_6-32.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__241">
+		<rdfs:label>hex_nut_6-32.2</rdfs:label>
+		<default:identifier>SO__241</default:identifier>
+		<default:title>hex_nut_6-32.2</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__250">
+		<rdfs:label>hex_nut_6-32.3</rdfs:label>
+		<default:identifier>SO__250</default:identifier>
+		<default:title>hex_nut_6-32.3</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__292">
+		<rdfs:label>hex_nut_6-32.1_1</rdfs:label>
+		<default:identifier>SO__292</default:identifier>
+		<default:title>hex_nut_6-32.1_1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__301">
+		<rdfs:label>hex_nut_6-32.2_1</rdfs:label>
+		<default:identifier>SO__301</default:identifier>
+		<default:title>hex_nut_6-32.2_1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__310">
+		<rdfs:label>Twin Spacer Attachment Two-Sided.1</rdfs:label>
+		<default:identifier>SO__310</default:identifier>
+		<default:title>Twin Spacer Attachment Two-Sided.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__304">
+		<rdfs:label>Twin Spacer Attachment One-Sided.1</rdfs:label>
+		<default:identifier>SO__304</default:identifier>
+		<default:title>Twin Spacer Attachment One-Sided.1</default:title>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/SO__307">
+		<rdfs:label>Twin Spacer Attachment One-Sided.2</rdfs:label>
+		<default:identifier>SO__307</default:identifier>
+		<default:title>Twin Spacer Attachment One-Sided.2</default:title>
+	</mech:MechanicalComponent>
+	<org:OrganizationUnit rdf:about="http://www.example.org/idrootx2x0/O__3">
+		<rdfs:label>Dassault Systemes</rdfs:label>
+		<default:identifier>O__3</default:identifier>
+		<default:title>Dassault Systemes</default:title>
+	</org:OrganizationUnit>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4">
+		<rdfs:label>Bogie</rdfs:label>
+		<default:identifier>Pa__4</default:identifier>
+		<default:title>Bogie</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__18">
+		<rdfs:label>Bogie Skeleton</rdfs:label>
+		<default:identifier>Pa__18</default:identifier>
+		<default:title>Bogie Skeleton</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__30">
+		<rdfs:label>Channel Connector Two-Sided</rdfs:label>
+		<default:identifier>Pa__30</default:identifier>
+		<default:title>Channel Connector Two-Sided</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__39">
+		<rdfs:label>Channel Connector Skeleton</rdfs:label>
+		<default:identifier>Pa__39</default:identifier>
+		<default:title>Channel Connector Skeleton</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__50">
+		<rdfs:label>Channel Connector One-Sided</rdfs:label>
+		<default:identifier>Pa__50</default:identifier>
+		<default:title>Channel Connector One-Sided</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__62">
+		<rdfs:label>Channel Connector</rdfs:label>
+		<default:identifier>Pa__62</default:identifier>
+		<default:title>Channel Connector</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__73">
+		<rdfs:label>6-32_SHCS X 0.250</rdfs:label>
+		<default:identifier>Pa__73</default:identifier>
+		<default:title>6-32_SHCS X 0.250</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__102">
+		<rdfs:label>1.5 Aluminum Channel</rdfs:label>
+		<default:identifier>Pa__102</default:identifier>
+		<default:title>1.5 Aluminum Channel</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__116">
+		<rdfs:label>3 Aluminum Channel</rdfs:label>
+		<default:identifier>Pa__116</default:identifier>
+		<default:title>3 Aluminum Channel</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__127">
+		<rdfs:label>Pattern F Bracket</rdfs:label>
+		<default:identifier>Pa__127</default:identifier>
+		<default:title>Pattern F Bracket</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__141">
+		<rdfs:label>3 Aluminum Channel Mod</rdfs:label>
+		<default:identifier>Pa__141</default:identifier>
+		<default:title>3 Aluminum Channel Mod</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__152">
+		<rdfs:label>3.75 Aluminum Channel</rdfs:label>
+		<default:identifier>Pa__152</default:identifier>
+		<default:title>3.75 Aluminum Channel</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__169">
+		<rdfs:label>Triple Spacer Attachment Two-Sided</rdfs:label>
+		<default:identifier>Pa__169</default:identifier>
+		<default:title>Triple Spacer Attachment Two-Sided</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__178">
+		<rdfs:label>Traverse Attachment Skeleton</rdfs:label>
+		<default:identifier>Pa__178</default:identifier>
+		<default:title>Traverse Attachment Skeleton</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__189">
+		<rdfs:label>Triple Spacer Attachment One-Sided</rdfs:label>
+		<default:identifier>Pa__189</default:identifier>
+		<default:title>Triple Spacer Attachment One-Sided</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__201">
+		<rdfs:label>6-32_SHCS X 0.750</rdfs:label>
+		<default:identifier>Pa__201</default:identifier>
+		<default:title>6-32_SHCS X 0.750</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__212">
+		<rdfs:label>6-32_L0_25 Spacer</rdfs:label>
+		<default:identifier>Pa__212</default:identifier>
+		<default:title>6-32_L0_25 Spacer</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__223">
+		<rdfs:label>hex_nut_6-32</rdfs:label>
+		<default:identifier>Pa__223</default:identifier>
+		<default:title>hex_nut_6-32</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__261">
+		<rdfs:label>Twin Spacer Attachment Two-Sided</rdfs:label>
+		<default:identifier>Pa__261</default:identifier>
+		<default:title>Twin Spacer Attachment Two-Sided</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:MechanicalComponent rdf:about="http://www.example.org/idrootx2x0/Pa__273">
+		<rdfs:label>Twin Spacer Attachment One-Sided</rdfs:label>
+		<default:identifier>Pa__273</default:identifier>
+		<default:title>Twin Spacer Attachment One-Sided</default:title>
+		<default:mass></default:mass>
+	</mech:MechanicalComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__4_SystemComponent.partOf.SystemComponent_SO__28">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__4</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__28</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__4_SystemComponent.partOf.SystemComponent_SO__100">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__4</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__100</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__4_SystemComponent.partOf.SystemComponent_SO__111">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__4</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__111</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__4_SystemComponent.partOf.SystemComponent_SO__114">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__4</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__114</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__4_SystemComponent.partOf.SystemComponent_SO__125">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__4</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__125</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__4_SystemComponent.partOf.SystemComponent_SO__136">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__4</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__136</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__4_SystemComponent.partOf.SystemComponent_SO__139">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__4</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__139</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__4_SystemComponent.partOf.SystemComponent_SO__150">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__4</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__150</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__4_SystemComponent.partOf.SystemComponent_SO__161">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__4</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__161</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__4_SystemComponent.partOf.SystemComponent_SO__164">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__4</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__164</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__4_SystemComponent.partOf.SystemComponent_SO__167">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__4</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__167</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__4_SystemComponent.partOf.SystemComponent_SO__259">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__4</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__259</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__4_SystemComponent.partOf.SystemComponent_SO__310">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__4</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__310</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__4_SystemComponent.partOf.SystemComponent_SO__313">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__4</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__313</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__18_SystemComponent.usedIn.SystemComponent_SO__28">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__18</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__28</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__30_SystemComponent.partOf.SystemComponent_SO__48">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__30</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__48</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__30_SystemComponent.partOf.SystemComponent_SO__94">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__30</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__94</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__30_SystemComponent.partOf.SystemComponent_SO__97">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__30</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__97</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__30_SystemComponent.usedIn.SystemComponent_SO__100">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__30</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__100</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__30_SystemComponent.usedIn.SystemComponent_SO__164">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__30</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__164</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__39_SystemComponent.usedIn.SystemComponent_SO__48">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__39</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__48</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__39_SystemComponent.usedIn.SystemComponent_SO__60">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__39</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__60</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__50_SystemComponent.partOf.SystemComponent_SO__60">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__50</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__60</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__50_SystemComponent.partOf.SystemComponent_SO__71">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__50</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__71</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__50_SystemComponent.partOf.SystemComponent_SO__82">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__50</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__82</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__50_SystemComponent.partOf.SystemComponent_SO__85">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__50</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__85</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__50_SystemComponent.partOf.SystemComponent_SO__88">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__50</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__88</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__50_SystemComponent.partOf.SystemComponent_SO__91">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__50</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__91</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__50_SystemComponent.usedIn.SystemComponent_SO__94">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__50</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__94</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__50_SystemComponent.usedIn.SystemComponent_SO__97">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__50</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__97</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__50_SystemComponent.usedIn.SystemComponent_SO__114">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__50</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__114</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__62_SystemComponent.usedIn.SystemComponent_SO__71">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__62</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__71</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__73_SystemComponent.usedIn.SystemComponent_SO__82">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__73</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__82</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__73_SystemComponent.usedIn.SystemComponent_SO__85">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__73</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__85</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__73_SystemComponent.usedIn.SystemComponent_SO__88">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__73</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__88</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__73_SystemComponent.usedIn.SystemComponent_SO__91">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__73</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__91</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__102_SystemComponent.usedIn.SystemComponent_SO__111">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__102</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__111</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__116_SystemComponent.usedIn.SystemComponent_SO__125">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__116</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__125</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__116_SystemComponent.usedIn.SystemComponent_SO__167">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__116</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__167</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__127_SystemComponent.usedIn.SystemComponent_SO__136">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__127</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__136</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__127_SystemComponent.usedIn.SystemComponent_SO__139">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__127</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__139</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__141_SystemComponent.usedIn.SystemComponent_SO__150">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__141</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__150</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__152_SystemComponent.usedIn.SystemComponent_SO__161">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__152</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__161</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__169_SystemComponent.partOf.SystemComponent_SO__187">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__169</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__187</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__169_SystemComponent.partOf.SystemComponent_SO__253">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__169</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__253</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__169_SystemComponent.partOf.SystemComponent_SO__256">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__169</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__256</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__169_SystemComponent.usedIn.SystemComponent_SO__259">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__169</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__259</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__169_SystemComponent.usedIn.SystemComponent_SO__313">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__169</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__313</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__178_SystemComponent.usedIn.SystemComponent_SO__187">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__178</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__187</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__178_SystemComponent.usedIn.SystemComponent_SO__199">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__178</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__199</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__178_SystemComponent.usedIn.SystemComponent_SO__271">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__178</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__271</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__178_SystemComponent.usedIn.SystemComponent_SO__283">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__178</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__283</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__189_SystemComponent.partOf.SystemComponent_SO__199">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__189</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__199</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__189_SystemComponent.partOf.SystemComponent_SO__210">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__189</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__210</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__189_SystemComponent.partOf.SystemComponent_SO__221">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__189</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__221</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__189_SystemComponent.partOf.SystemComponent_SO__232">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__189</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__232</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__189_SystemComponent.partOf.SystemComponent_SO__235">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__189</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__235</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__189_SystemComponent.partOf.SystemComponent_SO__238">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__189</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__238</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__189_SystemComponent.partOf.SystemComponent_SO__241">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__189</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__241</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__189_SystemComponent.partOf.SystemComponent_SO__244">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__189</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__244</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__189_SystemComponent.partOf.SystemComponent_SO__247">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__189</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__247</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__189_SystemComponent.partOf.SystemComponent_SO__250">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__189</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__250</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__189_SystemComponent.usedIn.SystemComponent_SO__253">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__189</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__253</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__189_SystemComponent.usedIn.SystemComponent_SO__256">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__189</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__256</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__201_SystemComponent.usedIn.SystemComponent_SO__210">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__201</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__210</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__201_SystemComponent.usedIn.SystemComponent_SO__235">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__201</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__235</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__201_SystemComponent.usedIn.SystemComponent_SO__244">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__201</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__244</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__201_SystemComponent.usedIn.SystemComponent_SO__286">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__201</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__286</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__201_SystemComponent.usedIn.SystemComponent_SO__295">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__201</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__295</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__212_SystemComponent.usedIn.SystemComponent_SO__221">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__212</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__221</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__212_SystemComponent.usedIn.SystemComponent_SO__238">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__212</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__238</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__212_SystemComponent.usedIn.SystemComponent_SO__247">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__212</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__247</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__212_SystemComponent.usedIn.SystemComponent_SO__289">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__212</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__289</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__212_SystemComponent.usedIn.SystemComponent_SO__298">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__212</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__298</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__223_SystemComponent.usedIn.SystemComponent_SO__232">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__223</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__232</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__223_SystemComponent.usedIn.SystemComponent_SO__241">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__223</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__241</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__223_SystemComponent.usedIn.SystemComponent_SO__250">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__223</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__250</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__223_SystemComponent.usedIn.SystemComponent_SO__292">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__223</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__292</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__223_SystemComponent.usedIn.SystemComponent_SO__301">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__223</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__301</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__261_SystemComponent.partOf.SystemComponent_SO__271">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__261</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__271</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__261_SystemComponent.partOf.SystemComponent_SO__304">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__261</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__304</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__261_SystemComponent.partOf.SystemComponent_SO__307">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__261</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__307</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__261_SystemComponent.usedIn.SystemComponent_SO__310">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__261</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__310</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__273_SystemComponent.partOf.SystemComponent_SO__283">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__273</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__283</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__273_SystemComponent.partOf.SystemComponent_SO__286">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__273</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__286</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__273_SystemComponent.partOf.SystemComponent_SO__289">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__273</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__289</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__273_SystemComponent.partOf.SystemComponent_SO__292">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__273</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__292</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__273_SystemComponent.partOf.SystemComponent_SO__295">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__273</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__295</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__273_SystemComponent.partOf.SystemComponent_SO__298">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__273</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__298</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_partOf_SystemComponent rdf:about="Pa__273_SystemComponent.partOf.SystemComponent_SO__301">
+		<mech:SystemComponent_partOf_SystemComponent_Source>Pa__273</mech:SystemComponent_partOf_SystemComponent_Source>
+		<mech:SystemComponent_partOf_SystemComponent_Target>SO__301</mech:SystemComponent_partOf_SystemComponent_Target>
+	</mech:SystemComponent_partOf_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__273_SystemComponent.usedIn.SystemComponent_SO__304">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__273</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__304</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+	<mech:SystemComponent_usedIn_SystemComponent rdf:about="Pa__273_SystemComponent.usedIn.SystemComponent_SO__307">
+		<mech:SystemComponent_usedIn_SystemComponent_Source>Pa__273</mech:SystemComponent_usedIn_SystemComponent_Source>
+		<mech:SystemComponent_usedIn_SystemComponent_Target>SO__307</mech:SystemComponent_usedIn_SystemComponent_Target>
+	</mech:SystemComponent_usedIn_SystemComponent>
+</rdf:RDF>

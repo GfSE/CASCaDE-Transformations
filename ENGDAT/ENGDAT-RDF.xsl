@@ -3,12 +3,16 @@
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
+			<xsl:variable name="packageUri">
+				<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+			</xsl:variable>
 			<owl:Ontology>
 				<xsl:attribute name="rdf:about">
-					<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+					<xsl:value-of select="$packageUri"/>
 				</xsl:attribute>
 				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
 			</owl:Ontology>
+			<!--OrganizationUnit-->
 			<xsl:for-each select="//*[local-name()='SDE' or local-name()='RDE']/*[local-name()='EngineeringContact']/*[local-name()='CompanyName']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="."/>
@@ -16,20 +20,19 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(.)"/>
 				</xsl:variable>
-				<!--OrganizationUnit-->
 				<org:OrganizationUnit>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="."/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="."/>
-					</dc:title>
+					</default:title>
 				</org:OrganizationUnit>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='SDE' or local-name()='RDE']/*[local-name()='EngineeringContact']/*[local-name()='CompanyName']">
@@ -37,6 +40,7 @@
 					<xsl:value-of select="."/>
 				</xsl:variable>
 			</xsl:for-each>
+			<!--Person-->
 			<xsl:for-each select="//*[local-name()='SDE' or local-name()='RDE']/*[local-name()='EngineeringContact' or local-name()='TechnicalContact' or local-name()='TradingContact']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="./*[local-name()='RoutingCode']"/>
@@ -44,17 +48,16 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space()"/>
 				</xsl:variable>
-				<!--Person-->
 				<org:Person>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="./*[local-name()='RoutingCode']"/>
-					</dc:identifier>
+					</default:identifier>
 				</org:Person>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='SDE' or local-name()='RDE']/*[local-name()='EngineeringContact' or local-name()='TechnicalContact' or local-name()='TradingContact']">

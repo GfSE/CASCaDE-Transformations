@@ -3,12 +3,16 @@
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
+			<xsl:variable name="packageUri">
+				<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+			</xsl:variable>
 			<owl:Ontology>
 				<xsl:attribute name="rdf:about">
-					<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+					<xsl:value-of select="$packageUri"/>
 				</xsl:attribute>
 				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
 			</owl:Ontology>
+			<!--VerificationRun-->
 			<xsl:for-each select="//(*[local-name()='AoTest']|*[local-name()='AoSubTest']|*[local-name()='AoTestAbstract'])">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Id']"/>
@@ -16,20 +20,19 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(*[local-name()='Name'])"/>
 				</xsl:variable>
-				<!--VerificationRun-->
 				<ver:VerificationRun>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="*[local-name()='Id']"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="*[local-name()='Name']"/>
-					</dc:title>
+					</default:title>
 					<default:dateTime>
 						<xsl:value-of select="*[local-name()='DateCreated']"/>
 					</default:dateTime>
@@ -42,21 +45,22 @@
 				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Id']"/>
 				</xsl:variable>
-				<!--VerificationRun relations-->
+				<!--VerificationRun.ownedBy.Actor-->
 				<xsl:for-each select="*[local-name()='ResponsiblePerson']">
 					<ver:VerificationRun_ownedBy_Actor>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_VerificationRun.ownedBy.Actor_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_VerificationRun.ownedBy.Actor_',.)"/>
 						</xsl:attribute>
 						<ver:VerificationRun_ownedBy_Actor_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</ver:VerificationRun_ownedBy_Actor_Source>
 						<ver:VerificationRun_ownedBy_Actor_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</ver:VerificationRun_ownedBy_Actor_Target>
 					</ver:VerificationRun_ownedBy_Actor>
 				</xsl:for-each>
 			</xsl:for-each>
+			<!--VerificationResource-->
 			<xsl:for-each select="//*[contains(name(),'TestEquipment')]">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Id']"/>
@@ -64,20 +68,19 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(*[local-name()='Name'])"/>
 				</xsl:variable>
-				<!--VerificationResource-->
 				<ver:VerificationResource>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="*[local-name()='Id']"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="*[local-name()='Name']"/>
-					</dc:title>
+					</default:title>
 					<default:dateTime>
 						<xsl:value-of select="*[local-name()='DateCreated']"/>
 					</default:dateTime>
@@ -93,21 +96,22 @@
 				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Id']"/>
 				</xsl:variable>
-				<!--VerificationResource relations-->
+				<!--SystemComponent.ownedBy.Actor-->
 				<xsl:for-each select="*[local-name()='ResponsiblePerson']">
 					<ver:SystemComponent_ownedBy_Actor>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_SystemComponent.ownedBy.Actor_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.ownedBy.Actor_',.)"/>
 						</xsl:attribute>
 						<ver:SystemComponent_ownedBy_Actor_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</ver:SystemComponent_ownedBy_Actor_Source>
 						<ver:SystemComponent_ownedBy_Actor_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</ver:SystemComponent_ownedBy_Actor_Target>
 					</ver:SystemComponent_ownedBy_Actor>
 				</xsl:for-each>
 			</xsl:for-each>
+			<!--VerificationResource-->
 			<xsl:for-each select="//*[local-name()='TestEquipmentPart']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='application_attribute'][name='Id']@uid"/>
@@ -115,20 +119,19 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(*[local-name()='Id']/*[local-name()='Identifier']/@id)"/>
 				</xsl:variable>
-				<!--VerificationResource-->
 				<ver:VerificationResource>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="*[local-name()='application_attribute'][name='Id']@uid"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="*[local-name()='Id']/*[local-name()='Identifier']/@id"/>
-					</dc:title>
+					</default:title>
 					<default:mass>
 						<xsl:value-of select="*[local-name()='Versions']/*[local-name()='PartVersion']/*[local-name()='Views']/*[local-name()='PartView']/*[local-name()='PropertyValueAssignment']/*[local-name()='AssignedPropertyValues']/*[local-name()='PropertyValue'][./@uid='PRV--26']/*[local-name()='ValueComponent']/*[local-name()='CharacterString']"/>
 					</default:mass>
@@ -138,63 +141,64 @@
 				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='application_attribute'][name='Id']@uid"/>
 				</xsl:variable>
-				<!--VerificationResource relations-->
+				<!--SystemComponent.partOf.SystemComponent-->
 				<xsl:for-each select=".//*[local-name()='ViewOccurrenceRelationship']/*[local-name()='Related']/@uidRef">
 					<ver:SystemComponent_partOf_SystemComponent>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_SystemComponent.partOf.SystemComponent_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.partOf.SystemComponent_',.)"/>
 						</xsl:attribute>
 						<ver:SystemComponent_partOf_SystemComponent_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</ver:SystemComponent_partOf_SystemComponent_Source>
 						<ver:SystemComponent_partOf_SystemComponent_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</ver:SystemComponent_partOf_SystemComponent_Target>
 					</ver:SystemComponent_partOf_SystemComponent>
 				</xsl:for-each>
-				<!--VerificationResource relations-->
+				<!--SystemComponent.usedIn.SystemComponent-->
 				<xsl:for-each select=".//*[local-name()='Occurrence']/@uid">
 					<ver:SystemComponent_usedIn_SystemComponent>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_SystemComponent.usedIn.SystemComponent_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.usedIn.SystemComponent_',.)"/>
 						</xsl:attribute>
 						<ver:SystemComponent_usedIn_SystemComponent_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</ver:SystemComponent_usedIn_SystemComponent_Source>
 						<ver:SystemComponent_usedIn_SystemComponent_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</ver:SystemComponent_usedIn_SystemComponent_Target>
 					</ver:SystemComponent_usedIn_SystemComponent>
 				</xsl:for-each>
-				<!--VerificationResource relations-->
+				<!--SystemComponent.fulfils.Requirement-->
 				<xsl:for-each select=".//*[local-name()='AssignedRequirement']/@uidRef">
 					<ver:SystemComponent_fulfils_Requirement>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_SystemComponent.fulfils.Requirement_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.fulfils.Requirement_',.)"/>
 						</xsl:attribute>
 						<ver:SystemComponent_fulfils_Requirement_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</ver:SystemComponent_fulfils_Requirement_Source>
 						<ver:SystemComponent_fulfils_Requirement_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</ver:SystemComponent_fulfils_Requirement_Target>
 					</ver:SystemComponent_fulfils_Requirement>
 				</xsl:for-each>
-				<!--VerificationResource relations-->
-				<xsl:for-each select="//*[local-name()='Requirement'][//*[local-name()='RequirementView']/@uid='$input']/*[local-name()='uid']">
+				<!--SystemComponent.fulfils.Requirement-->
+				<xsl:for-each select="//*[local-name()='Requirement'][//*[local-name()='RequirementView']/@uid=$identifier]/*[local-name()='uid']">
 					<ver:SystemComponent_fulfils_Requirement>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_SystemComponent.fulfils.Requirement_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.fulfils.Requirement_',.)"/>
 						</xsl:attribute>
 						<ver:SystemComponent_fulfils_Requirement_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</ver:SystemComponent_fulfils_Requirement_Source>
 						<ver:SystemComponent_fulfils_Requirement_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</ver:SystemComponent_fulfils_Requirement_Target>
 					</ver:SystemComponent_fulfils_Requirement>
 				</xsl:for-each>
 			</xsl:for-each>
+			<!--SystemComponent-->
 			<xsl:for-each select="//(*[local-name()='AoUnitUnderTest']|*[local-name()='AoUnitUnderTestPart'])">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Id']"/>
@@ -202,20 +206,19 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(*[local-name()='Name'])"/>
 				</xsl:variable>
-				<!--SystemComponent-->
 				<sys:SystemComponent>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="*[local-name()='Id']"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="*[local-name()='Name']"/>
-					</dc:title>
+					</default:title>
 					<default:dateTime>
 						<xsl:value-of select="*[local-name()='DateCreated']"/>
 					</default:dateTime>
@@ -228,17 +231,17 @@
 				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='Id']"/>
 				</xsl:variable>
-				<!--SystemComponent relations-->
+				<!--SystemComponent.ownedBy.Actor-->
 				<xsl:for-each select="*[local-name()='ResponsiblePerson']">
 					<sys:SystemComponent_ownedBy_Actor>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_SystemComponent.ownedBy.Actor_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.ownedBy.Actor_',.)"/>
 						</xsl:attribute>
 						<sys:SystemComponent_ownedBy_Actor_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</sys:SystemComponent_ownedBy_Actor_Source>
 						<sys:SystemComponent_ownedBy_Actor_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</sys:SystemComponent_ownedBy_Actor_Target>
 					</sys:SystemComponent_ownedBy_Actor>
 				</xsl:for-each>

@@ -3,12 +3,16 @@
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
+			<xsl:variable name="packageUri">
+				<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+			</xsl:variable>
 			<owl:Ontology>
 				<xsl:attribute name="rdf:about">
-					<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+					<xsl:value-of select="$packageUri"/>
 				</xsl:attribute>
 				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
 			</owl:Ontology>
+			<!--MechanicalComponent-->
 			<xsl:for-each select="/*[local-name()='xmcf']/*[local-name()='connection_group']/*[local-name()='connected_to']/*[not(@pid=*[local-name()=':part']/@pid)]">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@pid"/>
@@ -16,20 +20,19 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(@pid)"/>
 				</xsl:variable>
-				<!--MechanicalComponent-->
 				<mech:MechanicalComponent>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="@pid"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="@pid"/>
-					</dc:title>
+					</default:title>
 				</mech:MechanicalComponent>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='xmcf']/*[local-name()='connection_group']/*[local-name()='connected_to']/*[not(@pid=*[local-name()=':part']/@pid)]">
@@ -37,6 +40,7 @@
 					<xsl:value-of select="@pid"/>
 				</xsl:variable>
 			</xsl:for-each>
+			<!--JoiningElement-->
 			<xsl:for-each select="/*[local-name()='xmcf']/*[local-name()='connection_group']/*[local-name()='connection_list']/*">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@label"/>
@@ -44,37 +48,36 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(@label)"/>
 				</xsl:variable>
-				<!--JoiningElement-->
 				<mech:JoiningElement>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="@label"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="@label"/>
-					</dc:title>
+					</default:title>
 				</mech:JoiningElement>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='xmcf']/*[local-name()='connection_group']/*[local-name()='connection_list']/*">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@label"/>
 				</xsl:variable>
-				<!--JoiningElement relations-->
+				<!--JoiningElement.connects.MechanicalComponent-->
 				<xsl:for-each select="../../*[local-name()='connected_to']/*[local-name()='part']/@pid">
 					<mech:JoiningElement_connects_MechanicalComponent>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_JoiningElement.connects.MechanicalComponent_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_JoiningElement.connects.MechanicalComponent_',.)"/>
 						</xsl:attribute>
 						<mech:JoiningElement_connects_MechanicalComponent_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</mech:JoiningElement_connects_MechanicalComponent_Source>
 						<mech:JoiningElement_connects_MechanicalComponent_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</mech:JoiningElement_connects_MechanicalComponent_Target>
 					</mech:JoiningElement_connects_MechanicalComponent>
 				</xsl:for-each>

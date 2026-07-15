@@ -3,12 +3,16 @@
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
+			<xsl:variable name="packageUri">
+				<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+			</xsl:variable>
 			<owl:Ontology>
 				<xsl:attribute name="rdf:about">
-					<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+					<xsl:value-of select="$packageUri"/>
 				</xsl:attribute>
 				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
 			</owl:Ontology>
+			<!--MechanicalComponent-->
 			<xsl:for-each select="//*[local-name()='resources']/*[local-name()='object']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@id"/>
@@ -16,37 +20,36 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
-				<!--MechanicalComponent-->
 				<mech:MechanicalComponent>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="@id"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="@name"/>
-					</dc:title>
+					</default:title>
 				</mech:MechanicalComponent>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='resources']/*[local-name()='object']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
-				<!--MechanicalComponent relations-->
+				<!--SystemComponent.usedIn.SystemComponent-->
 				<xsl:for-each select="./*[local-name()='components']/*[local-name()='component']/@objectid">
 					<mech:SystemComponent_usedIn_SystemComponent>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_SystemComponent.usedIn.SystemComponent_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.usedIn.SystemComponent_',.)"/>
 						</xsl:attribute>
 						<mech:SystemComponent_usedIn_SystemComponent_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</mech:SystemComponent_usedIn_SystemComponent_Source>
 						<mech:SystemComponent_usedIn_SystemComponent_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</mech:SystemComponent_usedIn_SystemComponent_Target>
 					</mech:SystemComponent_usedIn_SystemComponent>
 				</xsl:for-each>

@@ -3,12 +3,16 @@
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
+			<xsl:variable name="packageUri">
+				<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+			</xsl:variable>
 			<owl:Ontology>
 				<xsl:attribute name="rdf:about">
-					<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+					<xsl:value-of select="$packageUri"/>
 				</xsl:attribute>
 				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
 			</owl:Ontology>
+			<!--ElectricElectronicComponent-->
 			<xsl:for-each select="/*[local-name()='KBL_container']/Accessory|/*[local-name()='KBL_container']/*[local-name()='Assembly_part']|/*[local-name()='KBL_container']/*[local-name()='Cavity_plug']|/*[local-name()='KBL_container']/*[local-name()='Cavity_seal']|/*[local-name()='KBL_container']/*[local-name()='Co_pack_part']|/*[local-name()='KBL_container']/*[local-name()='Component']|/*[local-name()='KBL_container']/*[local-name()='Component_box']|/*[local-name()='KBL_container']/Connector_housing|/*[local-name()='KBL_container']/*[local-name()='Fixing']|/*[local-name()='KBL_container']/*[local-name()='General_terminal']|/*[local-name()='KBL_container']/*[local-name()='General_wire']|/*[local-name()='KBL_container']/*[local-name()='Part_with_title_block']|/*[local-name()='KBL_container']/*[local-name()='Wire_protection']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@id"/>
@@ -16,23 +20,22 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(*[local-name()='Part_number'])"/>
 				</xsl:variable>
-				<!--ElectricElectronicComponent-->
 				<ee:ElectricElectronicComponent>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="@id"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="*[local-name()='Part_number']"/>
-					</dc:title>
-					<dc:description>
+					</default:title>
+					<default:description>
 						<xsl:value-of select="*[local-name()='Description']"/>
-					</dc:description>
+					</default:description>
 				</ee:ElectricElectronicComponent>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='KBL_container']/Accessory|/*[local-name()='KBL_container']/*[local-name()='Assembly_part']|/*[local-name()='KBL_container']/*[local-name()='Cavity_plug']|/*[local-name()='KBL_container']/*[local-name()='Cavity_seal']|/*[local-name()='KBL_container']/*[local-name()='Co_pack_part']|/*[local-name()='KBL_container']/*[local-name()='Component']|/*[local-name()='KBL_container']/*[local-name()='Component_box']|/*[local-name()='KBL_container']/Connector_housing|/*[local-name()='KBL_container']/*[local-name()='Fixing']|/*[local-name()='KBL_container']/*[local-name()='General_terminal']|/*[local-name()='KBL_container']/*[local-name()='General_wire']|/*[local-name()='KBL_container']/*[local-name()='Part_with_title_block']|/*[local-name()='KBL_container']/*[local-name()='Wire_protection']">
@@ -40,6 +43,7 @@
 					<xsl:value-of select="@id"/>
 				</xsl:variable>
 			</xsl:for-each>
+			<!--ElectricElectronicConnection-->
 			<xsl:for-each select="/*[local-name()='KBL_container']/*[local-name()='General_wire']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@id"/>
@@ -47,20 +51,19 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(*[local-name()='Part_number'])"/>
 				</xsl:variable>
-				<!--ElectricElectronicConnection-->
 				<ee:ElectricElectronicConnection>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="@id"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="*[local-name()='Part_number']"/>
-					</dc:title>
+					</default:title>
 				</ee:ElectricElectronicConnection>
 			</xsl:for-each>
 			<xsl:for-each select="/*[local-name()='KBL_container']/*[local-name()='General_wire']">

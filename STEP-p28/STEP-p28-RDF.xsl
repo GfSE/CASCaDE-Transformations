@@ -3,12 +3,16 @@
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
+			<xsl:variable name="packageUri">
+				<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+			</xsl:variable>
 			<owl:Ontology>
 				<xsl:attribute name="rdf:about">
-					<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+					<xsl:value-of select="$packageUri"/>
 				</xsl:attribute>
 				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
 			</owl:Ontology>
+			<!--KinematicMechanism-->
 			<xsl:for-each select="//*[local-name()='Representation'][@xsi:type='bom:Mechanism']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
@@ -16,41 +20,41 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(*[local-name()='Name']/*[local-name()='CharacterString'])"/>
 				</xsl:variable>
-				<!--KinematicMechanism-->
 				<mech:KinematicMechanism>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="@uid"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="*[local-name()='Name']/*[local-name()='CharacterString']"/>
-					</dc:title>
+					</default:title>
 				</mech:KinematicMechanism>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Representation'][@xsi:type='bom:Mechanism']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
-				<!--KinematicMechanism relations-->
+				<!--KinematicMechanism.partOf.MechanicalComponent-->
 				<xsl:for-each select=".">
 					<mech:KinematicMechanism_partOf_MechanicalComponent>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_KinematicMechanism.partOf.MechanicalComponent_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_KinematicMechanism.partOf.MechanicalComponent_',.)"/>
 						</xsl:attribute>
 						<mech:KinematicMechanism_partOf_MechanicalComponent_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</mech:KinematicMechanism_partOf_MechanicalComponent_Source>
 						<mech:KinematicMechanism_partOf_MechanicalComponent_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</mech:KinematicMechanism_partOf_MechanicalComponent_Target>
 					</mech:KinematicMechanism_partOf_MechanicalComponent>
 				</xsl:for-each>
 			</xsl:for-each>
+			<!--MechanicalComponent-->
 			<xsl:for-each select="//*[local-name()='Occurrence']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
@@ -58,20 +62,19 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(*[local-name()='Id']/@id)"/>
 				</xsl:variable>
-				<!--MechanicalComponent-->
 				<mech:MechanicalComponent>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="@uid"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="*[local-name()='Id']/@id"/>
-					</dc:title>
+					</default:title>
 				</mech:MechanicalComponent>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Occurrence']">
@@ -79,6 +82,7 @@
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
 			</xsl:for-each>
+			<!--OrganizationUnit-->
 			<xsl:for-each select="//*[local-name()='Organization']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
@@ -86,41 +90,41 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(*[local-name()='Name']/*[local-name()='CharacterString'])"/>
 				</xsl:variable>
-				<!--OrganizationUnit-->
 				<org:OrganizationUnit>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="@uid"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="*[local-name()='Name']/*[local-name()='CharacterString']"/>
-					</dc:title>
+					</default:title>
 				</org:OrganizationUnit>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Organization']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
-				<!--OrganizationUnit relations-->
+				<!--OrganizationUnit.partOf.OrganizationUnit-->
 				<xsl:for-each select=".//*[local-name()='OrganizationRelationship'][*[local-name()='RelationType']/*[local-name()='ClassString']='hierarchy']/*[local-name()='Related']/@uidRef">
 					<org:OrganizationUnit_partOf_OrganizationUnit>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_OrganizationUnit.partOf.OrganizationUnit_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_OrganizationUnit.partOf.OrganizationUnit_',.)"/>
 						</xsl:attribute>
 						<org:OrganizationUnit_partOf_OrganizationUnit_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</org:OrganizationUnit_partOf_OrganizationUnit_Source>
 						<org:OrganizationUnit_partOf_OrganizationUnit_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</org:OrganizationUnit_partOf_OrganizationUnit_Target>
 					</org:OrganizationUnit_partOf_OrganizationUnit>
 				</xsl:for-each>
 			</xsl:for-each>
+			<!--MechanicalComponent-->
 			<xsl:for-each select="//*[local-name()='Part']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
@@ -128,20 +132,19 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(*[local-name()='Name']/*[local-name()='CharacterString']|*[local-name()='Id']/*[local-name()='Identifier']/@id)"/>
 				</xsl:variable>
-				<!--MechanicalComponent-->
 				<mech:MechanicalComponent>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="@uid"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="*[local-name()='Name']/*[local-name()='CharacterString']|*[local-name()='Id']/*[local-name()='Identifier']/@id"/>
-					</dc:title>
+					</default:title>
 					<default:mass>
 						<xsl:value-of select="*[local-name()='Versions']/*[local-name()='PartVersion']/*[local-name()='Views']/*[local-name()='PartView']/*[local-name()='PropertyValueAssignment']/*[local-name()='AssignedPropertyValues']/*[local-name()='PropertyValue'][./@uid='PRV--26']/*[local-name()='ValueComponent']/*[local-name()='CharacterString']"/>
 					</default:mass>
@@ -151,63 +154,64 @@
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
-				<!--MechanicalComponent relations-->
+				<!--SystemComponent.partOf.SystemComponent-->
 				<xsl:for-each select=".//*[local-name()='ViewOccurrenceRelationship']/*[local-name()='Related']/@uidRef">
 					<mech:SystemComponent_partOf_SystemComponent>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_SystemComponent.partOf.SystemComponent_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.partOf.SystemComponent_',.)"/>
 						</xsl:attribute>
 						<mech:SystemComponent_partOf_SystemComponent_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</mech:SystemComponent_partOf_SystemComponent_Source>
 						<mech:SystemComponent_partOf_SystemComponent_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</mech:SystemComponent_partOf_SystemComponent_Target>
 					</mech:SystemComponent_partOf_SystemComponent>
 				</xsl:for-each>
-				<!--MechanicalComponent relations-->
+				<!--SystemComponent.usedIn.SystemComponent-->
 				<xsl:for-each select=".//*[local-name()='Occurrence']/@uid">
 					<mech:SystemComponent_usedIn_SystemComponent>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_SystemComponent.usedIn.SystemComponent_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.usedIn.SystemComponent_',.)"/>
 						</xsl:attribute>
 						<mech:SystemComponent_usedIn_SystemComponent_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</mech:SystemComponent_usedIn_SystemComponent_Source>
 						<mech:SystemComponent_usedIn_SystemComponent_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</mech:SystemComponent_usedIn_SystemComponent_Target>
 					</mech:SystemComponent_usedIn_SystemComponent>
 				</xsl:for-each>
-				<!--MechanicalComponent relations-->
+				<!--SystemComponent.fulfils.Requirement-->
 				<xsl:for-each select=".//*[local-name()='AssignedRequirement']/@uidRef">
 					<mech:SystemComponent_fulfils_Requirement>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_SystemComponent.fulfils.Requirement_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.fulfils.Requirement_',.)"/>
 						</xsl:attribute>
 						<mech:SystemComponent_fulfils_Requirement_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</mech:SystemComponent_fulfils_Requirement_Source>
 						<mech:SystemComponent_fulfils_Requirement_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</mech:SystemComponent_fulfils_Requirement_Target>
 					</mech:SystemComponent_fulfils_Requirement>
 				</xsl:for-each>
-				<!--MechanicalComponent relations-->
-				<xsl:for-each select="//*[local-name()='Requirement'][//*[local-name()='RequirementView']/@uid='$input']/*[local-name()='uid']">
+				<!--SystemComponent.fulfils.Requirement-->
+				<xsl:for-each select="//*[local-name()='Requirement'][//*[local-name()='RequirementView']/@uid=$identifier]/*[local-name()='uid']">
 					<mech:SystemComponent_fulfils_Requirement>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_SystemComponent.fulfils.Requirement_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.fulfils.Requirement_',.)"/>
 						</xsl:attribute>
 						<mech:SystemComponent_fulfils_Requirement_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</mech:SystemComponent_fulfils_Requirement_Source>
 						<mech:SystemComponent_fulfils_Requirement_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</mech:SystemComponent_fulfils_Requirement_Target>
 					</mech:SystemComponent_fulfils_Requirement>
 				</xsl:for-each>
 			</xsl:for-each>
+			<!--Project-->
 			<xsl:for-each select="//*[local-name()='Project']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
@@ -215,44 +219,44 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(concat(*[local-name()='Id']/@id, ' ', *[local-name()='Name']/*[local-name()='CharacterString']))"/>
 				</xsl:variable>
-				<!--Project-->
 				<org:Project>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="@uid"/>
-					</dc:identifier>
+					</default:identifier>
 					<default:number>
 						<xsl:value-of select="*[local-name()='Id']/@id"/>
 					</default:number>
-					<dc:title>
+					<default:title>
 						<xsl:value-of select="*[local-name()='Name']/*[local-name()='CharacterString']"/>
-					</dc:title>
+					</default:title>
 				</org:Project>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Project']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
 				</xsl:variable>
-				<!--Project relations-->
+				<!--Event.ownedBy.Actor-->
 				<xsl:for-each select=".//*[local-name()='ResponsibleOrganizations']/*[local-name()='Organization']/@uidRef">
 					<org:Event_ownedBy_Actor>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_Event.ownedBy.Actor_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_Event.ownedBy.Actor_',.)"/>
 						</xsl:attribute>
 						<org:Event_ownedBy_Actor_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</org:Event_ownedBy_Actor_Source>
 						<org:Event_ownedBy_Actor_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</org:Event_ownedBy_Actor_Target>
 					</org:Event_ownedBy_Actor>
 				</xsl:for-each>
 			</xsl:for-each>
+			<!--Requirement-->
 			<xsl:for-each select="//*[local-name()='Requirement']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@uid"/>
@@ -260,23 +264,22 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(*[local-name()='Id']/*[local-name()='Identifier']/@id)"/>
 				</xsl:variable>
-				<!--Requirement-->
 				<arch:Requirement>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="@uid"/>
-					</dc:identifier>
+					</default:identifier>
 					<default:number>
 						<xsl:value-of select="*[local-name()='Id']/*[local-name()='Identifier']/@id"/>
 					</default:number>
-					<dc:description>
+					<default:description>
 						<xsl:value-of select="*[local-name()='Name']/*[local-name()='CharacterString']"/>
-					</dc:description>
+					</default:description>
 				</arch:Requirement>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Requirement']">

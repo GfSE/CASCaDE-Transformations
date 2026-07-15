@@ -3,12 +3,16 @@
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
+			<xsl:variable name="packageUri">
+				<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+			</xsl:variable>
 			<owl:Ontology>
 				<xsl:attribute name="rdf:about">
-					<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+					<xsl:value-of select="$packageUri"/>
 				</xsl:attribute>
 				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
 			</owl:Ontology>
+			<!--OrganizationUnit-->
 			<xsl:for-each select="//*[local-name()='Company']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="."/>
@@ -16,20 +20,19 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(.)"/>
 				</xsl:variable>
-				<!--OrganizationUnit-->
 				<org:OrganizationUnit>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="."/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="."/>
-					</dc:title>
+					</default:title>
 				</org:OrganizationUnit>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='Company']">
@@ -37,6 +40,7 @@
 					<xsl:value-of select="."/>
 				</xsl:variable>
 			</xsl:for-each>
+			<!--VerificationPlan-->
 			<xsl:for-each select="//*[local-name()='InspectionPlan']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='SystemID']/@uuid"/>
@@ -44,23 +48,22 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
-				<!--VerificationPlan-->
 				<ver:VerificationPlan>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="*[local-name()='SystemID']/@uuid"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="@name"/>
-					</dc:title>
-					<dc:description>
+					</default:title>
+					<default:description>
 						<xsl:value-of select="*[local-name()='Comment']"/>
-					</dc:description>
+					</default:description>
 				</ver:VerificationPlan>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='InspectionPlan']">
@@ -68,6 +71,7 @@
 					<xsl:value-of select="*[local-name()='SystemID']/@uuid"/>
 				</xsl:variable>
 			</xsl:for-each>
+			<!--VerificationRun-->
 			<xsl:for-each select="//*[local-name()='InspectionTask']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='SystemID']/@uuid"/>
@@ -75,23 +79,22 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
-				<!--VerificationRun-->
 				<ver:VerificationRun>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="*[local-name()='SystemID']/@uuid"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="@name"/>
-					</dc:title>
-					<dc:description>
+					</default:title>
+					<default:description>
 						<xsl:value-of select="*[local-name()='Description']"/>
-					</dc:description>
+					</default:description>
 				</ver:VerificationRun>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='InspectionTask']">
@@ -99,6 +102,7 @@
 					<xsl:value-of select="*[local-name()='SystemID']/@uuid"/>
 				</xsl:variable>
 			</xsl:for-each>
+			<!--VerificationCharacteristic-->
 			<xsl:for-each select="//*[local-name()='IPE']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='SystemID']/@uuid"/>
@@ -106,23 +110,22 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
-				<!--VerificationCharacteristic-->
 				<ver:VerificationCharacteristic>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="*[local-name()='SystemID']/@uuid"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="@name"/>
-					</dc:title>
-					<dc:description>
+					</default:title>
+					<default:description>
 						<xsl:value-of select="*[local-name()='Description']"/>
-					</dc:description>
+					</default:description>
 					<default:type>
 						<xsl:value-of select="@type"/>
 					</default:type>
@@ -132,17 +135,17 @@
 				<xsl:variable name="identifier">
 					<xsl:value-of select="*[local-name()='SystemID']/@uuid"/>
 				</xsl:variable>
-				<!--VerificationCharacteristic relations-->
+				<!--VerificationCharacteristic.partOf.VerificationPlan-->
 				<xsl:for-each select="ancestor::InspectionPlan/*[local-name()='SystemID']/@uuid">
 					<ver:VerificationCharacteristic_partOf_VerificationPlan>
 						<xsl:attribute name="rdf:about">
-							<xsl:value-of select="concat($input,'_VerificationCharacteristic.partOf.VerificationPlan_',.)"/>
+							<xsl:value-of select="concat($packageUri, $identifier,'_VerificationCharacteristic.partOf.VerificationPlan_',.)"/>
 						</xsl:attribute>
 						<ver:VerificationCharacteristic_partOf_VerificationPlan_Source>
-							<xsl:value-of select="$input"/>
+							<xsl:value-of select="concat($packageUri, $identifier)"/>
 						</ver:VerificationCharacteristic_partOf_VerificationPlan_Source>
 						<ver:VerificationCharacteristic_partOf_VerificationPlan_Target>
-							<xsl:value-of select="."/>
+							<xsl:value-of select="concat($packageUri,.)"/>
 						</ver:VerificationCharacteristic_partOf_VerificationPlan_Target>
 					</ver:VerificationCharacteristic_partOf_VerificationPlan>
 				</xsl:for-each>

@@ -3,12 +3,16 @@
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
+			<xsl:variable name="packageUri">
+				<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+			</xsl:variable>
 			<owl:Ontology>
 				<xsl:attribute name="rdf:about">
-					<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+					<xsl:value-of select="$packageUri"/>
 				</xsl:attribute>
 				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
 			</owl:Ontology>
+			<!--ComponentInterface-->
 			<xsl:for-each select="//*[local-name()='ScalarVariable']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@valueReference"/>
@@ -16,23 +20,22 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(@name)"/>
 				</xsl:variable>
-				<!--ComponentInterface-->
 				<sys:ComponentInterface>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="@valueReference"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="@name"/>
-					</dc:title>
-					<dc:description>
+					</default:title>
+					<default:description>
 						<xsl:value-of select="@description"/>
-					</dc:description>
+					</default:description>
 				</sys:ComponentInterface>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='ScalarVariable']">

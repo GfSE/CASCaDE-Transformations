@@ -3,12 +3,16 @@
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" standalone="yes"/>
 	<xsl:template match="/">
 		<rdf:RDF>
+			<xsl:variable name="packageUri">
+				<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+			</xsl:variable>
 			<owl:Ontology>
 				<xsl:attribute name="rdf:about">
-					<xsl:value-of select="concat('http://www.example.org/', generate-id(), '/')"/>
+					<xsl:value-of select="$packageUri"/>
 				</xsl:attribute>
 				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
 			</owl:Ontology>
+			<!--ElectricElectronicPort-->
 			<xsl:for-each select="//*[local-name()='InternalElement'][./*[local-name()='RoleRequirements'][@RefBaseRoleClassPath='AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Port']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@ID"/>
@@ -16,20 +20,19 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(@Name)"/>
 				</xsl:variable>
-				<!--ElectricElectronicPort-->
 				<ee:ElectricElectronicPort>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="@ID"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="@Name"/>
-					</dc:title>
+					</default:title>
 				</ee:ElectricElectronicPort>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='InternalElement'][./*[local-name()='RoleRequirements'][@RefBaseRoleClassPath='AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Port']">
@@ -37,6 +40,7 @@
 					<xsl:value-of select="@ID"/>
 				</xsl:variable>
 			</xsl:for-each>
+			<!--MechanicalComponent-->
 			<xsl:for-each select="//*[local-name()='InternalElement'][./*[local-name()='RoleRequirements'][@RefBaseRoleClassPath='AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Product']">
 				<xsl:variable name="identifier">
 					<xsl:value-of select="@ID"/>
@@ -44,20 +48,19 @@
 				<xsl:variable name="label">
 					<xsl:value-of select="normalize-space(@Name)"/>
 				</xsl:variable>
-				<!--MechanicalComponent-->
 				<mech:MechanicalComponent>
 					<xsl:attribute name="rdf:about">
-						<xsl:value-of select="$identifier"/>
+						<xsl:value-of select="concat($packageUri, $identifier)"/>
 					</xsl:attribute>
 					<xsl:element name="rdfs:label">
 						<xsl:value-of select="$label"/>
 					</xsl:element>
-					<dc:identifier>
+					<default:identifier>
 						<xsl:value-of select="@ID"/>
-					</dc:identifier>
-					<dc:title>
+					</default:identifier>
+					<default:title>
 						<xsl:value-of select="@Name"/>
-					</dc:title>
+					</default:title>
 				</mech:MechanicalComponent>
 			</xsl:for-each>
 			<xsl:for-each select="//*[local-name()='InternalElement'][./*[local-name()='RoleRequirements'][@RefBaseRoleClassPath='AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Product']">
