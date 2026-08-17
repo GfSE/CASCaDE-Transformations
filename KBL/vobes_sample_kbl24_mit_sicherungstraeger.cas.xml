@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cas:aPackage xmlns:cas="http://www.omg.org/spec/CASCaRA/metamodel/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:default="http://www.omg.org/spec/CASCaRA/ontology/" xmlns:ee="http://www.omg.org/spec/CASCaRA/ontology/ElectricElectronicDesign/" xmlns:kbl="http://www.prostep.org/Car_electric_container/KBL2.3/KBLSchema" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="http://www.example.org/idrootx2x0/">
+	<dcterms:contributor>Michael Kirsch, :em engineering methods AG</dcterms:contributor>
+	<dcterms:license>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
+https://opensource.org/licenses/MIT</dcterms:license>
+	<graph>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_0">
+			<dcterms:title>ECP001706</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_0</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001706</cas:Property>
+			<cas:Property cas:hasClass="description">BUCHSENGEHAEUSE_6-POL</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_8">
+			<dcterms:title>ECP001822</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_8</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001822</cas:Property>
+			<cas:Property cas:hasClass="description">RD-FLACHSTECKERGEHAEUSE 2-POLIG 2,8MM SCHWARZ</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_2">
+			<dcterms:title>ECP001982BS</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_2</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001982BS</cas:Property>
+			<cas:Property cas:hasClass="description">Steckgehaeuse_5Pol_Klima</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_3">
+			<dcterms:title>ECP001743</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_3</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001743</cas:Property>
+			<cas:Property cas:hasClass="description">FLACHKONTAKTGEH_4POL</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_5">
+			<dcterms:title>ECPUNIFCP01</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_5</cas:Property>
+			<cas:Property cas:hasClass="title">ECPUNIFCP01</cas:Property>
+			<cas:Property cas:hasClass="description">DUMMY_BUCHSENGEH_1POL</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_9">
+			<dcterms:title>ECP001135</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_9</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001135</cas:Property>
+			<cas:Property cas:hasClass="description">BATTERIEKLEMME_PLUS</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_7">
+			<dcterms:title>ECP001859AG</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_7</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001859AG</cas:Property>
+			<cas:Property cas:hasClass="description">KABELSCHUH</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_4">
+			<dcterms:title>ECP001859F</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_4</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001859F</cas:Property>
+			<cas:Property cas:hasClass="description">KABELSCHUH_M6-10MM2</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_1">
+			<dcterms:title>ECP001859AT</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_1</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001859AT</cas:Property>
+			<cas:Property cas:hasClass="description">KABELSCHUH</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_10">
+			<dcterms:title>ECPSPLICE</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_10</cas:Property>
+			<cas:Property cas:hasClass="title">ECPSPLICE</cas:Property>
+			<cas:Property cas:hasClass="description">Verbinder</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_304_1">
+			<dcterms:title>AS0105563</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_304_1</cas:Property>
+			<cas:Property cas:hasClass="title">AS0105563</cas:Property>
+			<cas:Property cas:hasClass="description">Multifuse</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_309_0">
+			<dcterms:title>CPL001841</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_309_0</cas:Property>
+			<cas:Property cas:hasClass="title">CPL001841</cas:Property>
+			<cas:Property cas:hasClass="description">Dichtung</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_311_0">
+			<dcterms:title>CSE001742</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_311_0</cas:Property>
+			<cas:Property cas:hasClass="title">CSE001742</cas:Property>
+			<cas:Property cas:hasClass="description">Dichtung</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_311_1">
+			<dcterms:title>CSE001744A</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_311_1</cas:Property>
+			<cas:Property cas:hasClass="title">CSE001744A</cas:Property>
+			<cas:Property cas:hasClass="description">Dichtung</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_302_0">
+			<dcterms:title>MFS_740_C150</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_302_0</cas:Property>
+			<cas:Property cas:hasClass="title">MFS_740_C150</cas:Property>
+			<cas:Property cas:hasClass="description">Sicherung Type_SF30 150A</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_302_1">
+			<dcterms:title>MFS_740_C110</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_302_1</cas:Property>
+			<cas:Property cas:hasClass="title">MFS_740_C110</cas:Property>
+			<cas:Property cas:hasClass="description">Sicherung Type_SF30 110A</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_302_2">
+			<dcterms:title>MFS_740_C80</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_302_2</cas:Property>
+			<cas:Property cas:hasClass="title">MFS_740_C80</cas:Property>
+			<cas:Property cas:hasClass="description">Sicherung Type_SF30 80A</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_302_3">
+			<dcterms:title>MFS_740_C40</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_302_3</cas:Property>
+			<cas:Property cas:hasClass="title">MFS_740_C40</cas:Property>
+			<cas:Property cas:hasClass="description">Sicherung Type_SF30 40A</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_302_4">
+			<dcterms:title>MFS_740_C50</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_302_4</cas:Property>
+			<cas:Property cas:hasClass="title">MFS_740_C50</cas:Property>
+			<cas:Property cas:hasClass="description">Sicherung Type_SF30 50A</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_302_5">
+			<dcterms:title>MFS_740_C60</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_302_5</cas:Property>
+			<cas:Property cas:hasClass="title">MFS_740_C60</cas:Property>
+			<cas:Property cas:hasClass="description">Sicherung Type_SF30 60A</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_302_6">
+			<dcterms:title>FUS00113114</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_302_6</cas:Property>
+			<cas:Property cas:hasClass="title">FUS00113114</cas:Property>
+			<cas:Property cas:hasClass="description">Sicherung Type_C 25A</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_413_0">
+			<dcterms:title>FBX001546</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_413_0</cas:Property>
+			<cas:Property cas:hasClass="title">FBX001546</cas:Property>
+			<cas:Property cas:hasClass="description">Hauptsicherungsbox</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_0">
+			<dcterms:title>ECP001706</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_0</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001706</cas:Property>
+			<cas:Property cas:hasClass="description">BUCHSENGEHAEUSE_6-POL</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_8">
+			<dcterms:title>ECP001822</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_8</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001822</cas:Property>
+			<cas:Property cas:hasClass="description">RD-FLACHSTECKERGEHAEUSE 2-POLIG 2,8MM SCHWARZ</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_2">
+			<dcterms:title>ECP001982BS</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_2</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001982BS</cas:Property>
+			<cas:Property cas:hasClass="description">Steckgehaeuse_5Pol_Klima</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_3">
+			<dcterms:title>ECP001743</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_3</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001743</cas:Property>
+			<cas:Property cas:hasClass="description">FLACHKONTAKTGEH_4POL</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_5">
+			<dcterms:title>ECPUNIFCP01</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_5</cas:Property>
+			<cas:Property cas:hasClass="title">ECPUNIFCP01</cas:Property>
+			<cas:Property cas:hasClass="description">DUMMY_BUCHSENGEH_1POL</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_9">
+			<dcterms:title>ECP001135</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_9</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001135</cas:Property>
+			<cas:Property cas:hasClass="description">BATTERIEKLEMME_PLUS</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_7">
+			<dcterms:title>ECP001859AG</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_7</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001859AG</cas:Property>
+			<cas:Property cas:hasClass="description">KABELSCHUH</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_4">
+			<dcterms:title>ECP001859F</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_4</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001859F</cas:Property>
+			<cas:Property cas:hasClass="description">KABELSCHUH_M6-10MM2</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_1">
+			<dcterms:title>ECP001859AT</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_1</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001859AT</cas:Property>
+			<cas:Property cas:hasClass="description">KABELSCHUH</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_315_10">
+			<dcterms:title>ECPSPLICE</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_315_10</cas:Property>
+			<cas:Property cas:hasClass="title">ECPSPLICE</cas:Property>
+			<cas:Property cas:hasClass="description">Verbinder</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_326_0">
+			<dcterms:title>TER00156401</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_326_0</cas:Property>
+			<cas:Property cas:hasClass="title">TER00156401</cas:Property>
+			<cas:Property cas:hasClass="description">box</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_326_1">
+			<dcterms:title>TER00184401</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_326_1</cas:Property>
+			<cas:Property cas:hasClass="title">TER00184401</cas:Property>
+			<cas:Property cas:hasClass="description">flat</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_326_2">
+			<dcterms:title>ECP001859AT</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_326_2</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001859AT</cas:Property>
+			<cas:Property cas:hasClass="description">cable_shoe</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_326_3">
+			<dcterms:title>TER00184901</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_326_3</cas:Property>
+			<cas:Property cas:hasClass="title">TER00184901</cas:Property>
+			<cas:Property cas:hasClass="description">cable_shoe</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_326_4">
+			<dcterms:title>TER001859AH</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_326_4</cas:Property>
+			<cas:Property cas:hasClass="title">TER001859AH</cas:Property>
+			<cas:Property cas:hasClass="description">cable_shoe</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_326_5">
+			<dcterms:title>TER001137B</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_326_5</cas:Property>
+			<cas:Property cas:hasClass="title">TER001137B</cas:Property>
+			<cas:Property cas:hasClass="description">cable_shoe</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_326_6">
+			<dcterms:title>ECP001859F</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_326_6</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001859F</cas:Property>
+			<cas:Property cas:hasClass="description">cable_shoe</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_326_7">
+			<dcterms:title>TERUNISNFLK</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_326_7</cas:Property>
+			<cas:Property cas:hasClass="title">TERUNISNFLK</cas:Property>
+			<cas:Property cas:hasClass="description">box</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_326_8">
+			<dcterms:title>TER00132602</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_326_8</cas:Property>
+			<cas:Property cas:hasClass="title">TER00132602</cas:Property>
+			<cas:Property cas:hasClass="description">flat</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_326_9">
+			<dcterms:title>ECP001859AG</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_326_9</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001859AG</cas:Property>
+			<cas:Property cas:hasClass="description">cable_shoe</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_326_10">
+			<dcterms:title>TER001137C</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_326_10</cas:Property>
+			<cas:Property cas:hasClass="title">TER001137C</cas:Property>
+			<cas:Property cas:hasClass="description">cable_shoe</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_326_11">
+			<dcterms:title>ECP001135</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_326_11</cas:Property>
+			<cas:Property cas:hasClass="title">ECP001135</cas:Property>
+			<cas:Property cas:hasClass="description">cable_shoe</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_0">
+			<dcterms:title>WIR0017055</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_0</cas:Property>
+			<cas:Property cas:hasClass="title">WIR0017055</cas:Property>
+			<cas:Property cas:hasClass="description">Unspezifizierter Draht</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_1">
+			<dcterms:title>WIR0010006</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_1</cas:Property>
+			<cas:Property cas:hasClass="title">WIR0010006</cas:Property>
+			<cas:Property cas:hasClass="description">Unspezifizierter Draht</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_2">
+			<dcterms:title>WIR00111701</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_2</cas:Property>
+			<cas:Property cas:hasClass="title">WIR00111701</cas:Property>
+			<cas:Property cas:hasClass="description">Unspezifizierter Draht</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_3">
+			<dcterms:title>WIR00121103</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_3</cas:Property>
+			<cas:Property cas:hasClass="title">WIR00121103</cas:Property>
+			<cas:Property cas:hasClass="description">Unspezifizierter Draht</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_4">
+			<dcterms:title>WIR0010005</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_4</cas:Property>
+			<cas:Property cas:hasClass="title">WIR0010005</cas:Property>
+			<cas:Property cas:hasClass="description">Unspezifizierter Draht</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_5">
+			<dcterms:title>WIR00180202</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_5</cas:Property>
+			<cas:Property cas:hasClass="title">WIR00180202</cas:Property>
+			<cas:Property cas:hasClass="description">Unspezifizierter Draht</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_6">
+			<dcterms:title>WIR00162703</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_6</cas:Property>
+			<cas:Property cas:hasClass="title">WIR00162703</cas:Property>
+			<cas:Property cas:hasClass="description">Unspezifizierter Draht</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_7">
+			<dcterms:title>WIR00198202</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_7</cas:Property>
+			<cas:Property cas:hasClass="title">WIR00198202</cas:Property>
+			<cas:Property cas:hasClass="description">Unspezifizierter Draht</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_0">
+			<dcterms:title>WIR0017055</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_0</cas:Property>
+			<cas:Property cas:hasClass="title">WIR0017055</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_1">
+			<dcterms:title>WIR0010006</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_1</cas:Property>
+			<cas:Property cas:hasClass="title">WIR0010006</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_2">
+			<dcterms:title>WIR00111701</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_2</cas:Property>
+			<cas:Property cas:hasClass="title">WIR00111701</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_3">
+			<dcterms:title>WIR00121103</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_3</cas:Property>
+			<cas:Property cas:hasClass="title">WIR00121103</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_4">
+			<dcterms:title>WIR0010005</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_4</cas:Property>
+			<cas:Property cas:hasClass="title">WIR0010005</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_5">
+			<dcterms:title>WIR00180202</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_5</cas:Property>
+			<cas:Property cas:hasClass="title">WIR00180202</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_6">
+			<dcterms:title>WIR00162703</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_6</cas:Property>
+			<cas:Property cas:hasClass="title">WIR00162703</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/id_327_7">
+			<dcterms:title>WIR00198202</dcterms:title>
+			<cas:Property cas:hasClass="identifier">id_327_7</cas:Property>
+			<cas:Property cas:hasClass="title">WIR00198202</cas:Property>
+		</cas:anEntity>
+	</graph>
+</cas:aPackage>

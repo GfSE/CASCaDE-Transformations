@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cas:aPackage xmlns:arch="http://www.omg.org/spec/CASCaRA/ontology/ProductArchitecture/" xmlns:bom="http://standards.iso.org/iso/ts/10303/-3001/-ed-1/tech/xml-schema/bo_model" xmlns:cas="http://www.omg.org/spec/CASCaRA/metamodel/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:default="http://www.omg.org/spec/CASCaRA/ontology/" xmlns:mech="http://www.omg.org/spec/CASCaRA/ontology/MechanicalDesign/" xmlns:org="http://www.omg.org/spec/CASCaRA/ontology/Organization/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="http://www.example.org/idrootx2x0/">
+	<dcterms:contributor>Michael Kirsch, :em engineering methods AG</dcterms:contributor>
+	<dcterms:license>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
+https://opensource.org/licenses/MIT</dcterms:license>
+	<graph>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__28">
+			<dcterms:title>Bogie Skeleton.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__28</cas:Property>
+			<cas:Property cas:hasClass="title">Bogie Skeleton.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__100">
+			<dcterms:title>Channel Connector Two-Sided.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__100</cas:Property>
+			<cas:Property cas:hasClass="title">Channel Connector Two-Sided.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__164">
+			<dcterms:title>Channel Connector Two-Sided.2</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__164</cas:Property>
+			<cas:Property cas:hasClass="title">Channel Connector Two-Sided.2</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__48">
+			<dcterms:title>Channel Connector Skeleton.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__48</cas:Property>
+			<cas:Property cas:hasClass="title">Channel Connector Skeleton.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__60">
+			<dcterms:title>Channel Connector Skeleton.1_1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__60</cas:Property>
+			<cas:Property cas:hasClass="title">Channel Connector Skeleton.1_1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__94">
+			<dcterms:title>Channel Connector One-Sided.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__94</cas:Property>
+			<cas:Property cas:hasClass="title">Channel Connector One-Sided.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__97">
+			<dcterms:title>Channel Connector One-Sided.2</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__97</cas:Property>
+			<cas:Property cas:hasClass="title">Channel Connector One-Sided.2</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__114">
+			<dcterms:title>Channel Connector One-Sided.1_1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__114</cas:Property>
+			<cas:Property cas:hasClass="title">Channel Connector One-Sided.1_1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__71">
+			<dcterms:title>Channel Connector.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__71</cas:Property>
+			<cas:Property cas:hasClass="title">Channel Connector.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__82">
+			<dcterms:title>6-32_SHCS X 0.250.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__82</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_SHCS X 0.250.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__85">
+			<dcterms:title>6-32_SHCS X 0.250.2</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__85</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_SHCS X 0.250.2</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__88">
+			<dcterms:title>6-32_SHCS X 0.250.3</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__88</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_SHCS X 0.250.3</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__91">
+			<dcterms:title>6-32_SHCS X 0.250.4</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__91</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_SHCS X 0.250.4</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__111">
+			<dcterms:title>1.5 Aluminum Channel.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__111</cas:Property>
+			<cas:Property cas:hasClass="title">1.5 Aluminum Channel.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__125">
+			<dcterms:title>3 Aluminum Channel.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__125</cas:Property>
+			<cas:Property cas:hasClass="title">3 Aluminum Channel.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__167">
+			<dcterms:title>3 Aluminum Channel.2</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__167</cas:Property>
+			<cas:Property cas:hasClass="title">3 Aluminum Channel.2</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__136">
+			<dcterms:title>Pattern F Bracket.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__136</cas:Property>
+			<cas:Property cas:hasClass="title">Pattern F Bracket.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__139">
+			<dcterms:title>Pattern F Bracket.2</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__139</cas:Property>
+			<cas:Property cas:hasClass="title">Pattern F Bracket.2</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__150">
+			<dcterms:title>3 Aluminum Channel Mod.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__150</cas:Property>
+			<cas:Property cas:hasClass="title">3 Aluminum Channel Mod.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__161">
+			<dcterms:title>3.75 Aluminum Channel.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__161</cas:Property>
+			<cas:Property cas:hasClass="title">3.75 Aluminum Channel.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__259">
+			<dcterms:title>Triple Spacer Attachment Two-Sided.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__259</cas:Property>
+			<cas:Property cas:hasClass="title">Triple Spacer Attachment Two-Sided.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__313">
+			<dcterms:title>Triple Spacer Attachment Two-Sided.2</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__313</cas:Property>
+			<cas:Property cas:hasClass="title">Triple Spacer Attachment Two-Sided.2</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__187">
+			<dcterms:title>Traverse Attachment Skeleton.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__187</cas:Property>
+			<cas:Property cas:hasClass="title">Traverse Attachment Skeleton.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__199">
+			<dcterms:title>Traverse Attachment Skeleton.1_1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__199</cas:Property>
+			<cas:Property cas:hasClass="title">Traverse Attachment Skeleton.1_1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__271">
+			<dcterms:title>Traverse Attachment Skeleton.1_2</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__271</cas:Property>
+			<cas:Property cas:hasClass="title">Traverse Attachment Skeleton.1_2</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__283">
+			<dcterms:title>Traverse Attachment Skeleton.1_3</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__283</cas:Property>
+			<cas:Property cas:hasClass="title">Traverse Attachment Skeleton.1_3</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__253">
+			<dcterms:title>Triple Spacer Attachment One-Sided.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__253</cas:Property>
+			<cas:Property cas:hasClass="title">Triple Spacer Attachment One-Sided.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__256">
+			<dcterms:title>Triple Spacer Attachment One-Sided.2</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__256</cas:Property>
+			<cas:Property cas:hasClass="title">Triple Spacer Attachment One-Sided.2</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__210">
+			<dcterms:title>6-32_SHCS X 0.750.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__210</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_SHCS X 0.750.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__235">
+			<dcterms:title>6-32_SHCS X 0.750.2</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__235</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_SHCS X 0.750.2</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__244">
+			<dcterms:title>6-32_SHCS X 0.750.3</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__244</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_SHCS X 0.750.3</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__286">
+			<dcterms:title>6-32_SHCS X 0.750.1_1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__286</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_SHCS X 0.750.1_1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__295">
+			<dcterms:title>6-32_SHCS X 0.750.2_1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__295</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_SHCS X 0.750.2_1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__221">
+			<dcterms:title>6-32_L0_25 Spacer.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__221</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_L0_25 Spacer.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__238">
+			<dcterms:title>6-32_L0_25 Spacer.2</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__238</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_L0_25 Spacer.2</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__247">
+			<dcterms:title>6-32_L0_25 Spacer.3</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__247</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_L0_25 Spacer.3</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__289">
+			<dcterms:title>6-32_L0_25 Spacer.1_1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__289</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_L0_25 Spacer.1_1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__298">
+			<dcterms:title>6-32_L0_25 Spacer.2_1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__298</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_L0_25 Spacer.2_1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__232">
+			<dcterms:title>hex_nut_6-32.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__232</cas:Property>
+			<cas:Property cas:hasClass="title">hex_nut_6-32.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__241">
+			<dcterms:title>hex_nut_6-32.2</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__241</cas:Property>
+			<cas:Property cas:hasClass="title">hex_nut_6-32.2</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__250">
+			<dcterms:title>hex_nut_6-32.3</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__250</cas:Property>
+			<cas:Property cas:hasClass="title">hex_nut_6-32.3</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__292">
+			<dcterms:title>hex_nut_6-32.1_1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__292</cas:Property>
+			<cas:Property cas:hasClass="title">hex_nut_6-32.1_1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__301">
+			<dcterms:title>hex_nut_6-32.2_1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__301</cas:Property>
+			<cas:Property cas:hasClass="title">hex_nut_6-32.2_1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__310">
+			<dcterms:title>Twin Spacer Attachment Two-Sided.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__310</cas:Property>
+			<cas:Property cas:hasClass="title">Twin Spacer Attachment Two-Sided.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__304">
+			<dcterms:title>Twin Spacer Attachment One-Sided.1</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__304</cas:Property>
+			<cas:Property cas:hasClass="title">Twin Spacer Attachment One-Sided.1</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/SO__307">
+			<dcterms:title>Twin Spacer Attachment One-Sided.2</dcterms:title>
+			<cas:Property cas:hasClass="identifier">SO__307</cas:Property>
+			<cas:Property cas:hasClass="title">Twin Spacer Attachment One-Sided.2</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/O__3">
+			<dcterms:title>Dassault Systemes</dcterms:title>
+			<cas:Property cas:hasClass="identifier">O__3</cas:Property>
+			<cas:Property cas:hasClass="title">Dassault Systemes</cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__4">
+			<dcterms:title>Bogie</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__4</cas:Property>
+			<cas:Property cas:hasClass="title">Bogie</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__18">
+			<dcterms:title>Bogie Skeleton</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__18</cas:Property>
+			<cas:Property cas:hasClass="title">Bogie Skeleton</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__30">
+			<dcterms:title>Channel Connector Two-Sided</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__30</cas:Property>
+			<cas:Property cas:hasClass="title">Channel Connector Two-Sided</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__39">
+			<dcterms:title>Channel Connector Skeleton</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__39</cas:Property>
+			<cas:Property cas:hasClass="title">Channel Connector Skeleton</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__50">
+			<dcterms:title>Channel Connector One-Sided</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__50</cas:Property>
+			<cas:Property cas:hasClass="title">Channel Connector One-Sided</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__62">
+			<dcterms:title>Channel Connector</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__62</cas:Property>
+			<cas:Property cas:hasClass="title">Channel Connector</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__73">
+			<dcterms:title>6-32_SHCS X 0.250</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__73</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_SHCS X 0.250</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__102">
+			<dcterms:title>1.5 Aluminum Channel</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__102</cas:Property>
+			<cas:Property cas:hasClass="title">1.5 Aluminum Channel</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__116">
+			<dcterms:title>3 Aluminum Channel</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__116</cas:Property>
+			<cas:Property cas:hasClass="title">3 Aluminum Channel</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__127">
+			<dcterms:title>Pattern F Bracket</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__127</cas:Property>
+			<cas:Property cas:hasClass="title">Pattern F Bracket</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__141">
+			<dcterms:title>3 Aluminum Channel Mod</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__141</cas:Property>
+			<cas:Property cas:hasClass="title">3 Aluminum Channel Mod</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__152">
+			<dcterms:title>3.75 Aluminum Channel</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__152</cas:Property>
+			<cas:Property cas:hasClass="title">3.75 Aluminum Channel</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__169">
+			<dcterms:title>Triple Spacer Attachment Two-Sided</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__169</cas:Property>
+			<cas:Property cas:hasClass="title">Triple Spacer Attachment Two-Sided</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__178">
+			<dcterms:title>Traverse Attachment Skeleton</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__178</cas:Property>
+			<cas:Property cas:hasClass="title">Traverse Attachment Skeleton</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__189">
+			<dcterms:title>Triple Spacer Attachment One-Sided</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__189</cas:Property>
+			<cas:Property cas:hasClass="title">Triple Spacer Attachment One-Sided</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__201">
+			<dcterms:title>6-32_SHCS X 0.750</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__201</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_SHCS X 0.750</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__212">
+			<dcterms:title>6-32_L0_25 Spacer</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__212</cas:Property>
+			<cas:Property cas:hasClass="title">6-32_L0_25 Spacer</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__223">
+			<dcterms:title>hex_nut_6-32</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__223</cas:Property>
+			<cas:Property cas:hasClass="title">hex_nut_6-32</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__261">
+			<dcterms:title>Twin Spacer Attachment Two-Sided</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__261</cas:Property>
+			<cas:Property cas:hasClass="title">Twin Spacer Attachment Two-Sided</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<cas:anEntity id="http://www.example.org/idrootx2x0/Pa__273">
+			<dcterms:title>Twin Spacer Attachment One-Sided</dcterms:title>
+			<cas:Property cas:hasClass="identifier">Pa__273</cas:Property>
+			<cas:Property cas:hasClass="title">Twin Spacer Attachment One-Sided</cas:Property>
+			<cas:Property cas:hasClass="mass"></cas:Property>
+		</cas:anEntity>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4_SystemComponent.partOf.SystemComponent_SO__28">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__4"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__28"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4_SystemComponent.partOf.SystemComponent_SO__100">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__4"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__100"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4_SystemComponent.partOf.SystemComponent_SO__111">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__4"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__111"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4_SystemComponent.partOf.SystemComponent_SO__114">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__4"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__114"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4_SystemComponent.partOf.SystemComponent_SO__125">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__4"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__125"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4_SystemComponent.partOf.SystemComponent_SO__136">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__4"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__136"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4_SystemComponent.partOf.SystemComponent_SO__139">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__4"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__139"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4_SystemComponent.partOf.SystemComponent_SO__150">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__4"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__150"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4_SystemComponent.partOf.SystemComponent_SO__161">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__4"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__161"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4_SystemComponent.partOf.SystemComponent_SO__164">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__4"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__164"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4_SystemComponent.partOf.SystemComponent_SO__167">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__4"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__167"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4_SystemComponent.partOf.SystemComponent_SO__259">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__4"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__259"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4_SystemComponent.partOf.SystemComponent_SO__310">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__4"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__310"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__4_SystemComponent.partOf.SystemComponent_SO__313">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__4"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__313"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__18_SystemComponent.usedIn.SystemComponent_SO__28">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__18"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__28"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__30_SystemComponent.partOf.SystemComponent_SO__48">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__30"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__48"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__30_SystemComponent.partOf.SystemComponent_SO__94">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__30"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__94"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__30_SystemComponent.partOf.SystemComponent_SO__97">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__30"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__97"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__30_SystemComponent.usedIn.SystemComponent_SO__100">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__30"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__100"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__30_SystemComponent.usedIn.SystemComponent_SO__164">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__30"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__164"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__39_SystemComponent.usedIn.SystemComponent_SO__48">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__39"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__48"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__39_SystemComponent.usedIn.SystemComponent_SO__60">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__39"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__60"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__50_SystemComponent.partOf.SystemComponent_SO__60">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__50"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__60"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__50_SystemComponent.partOf.SystemComponent_SO__71">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__50"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__71"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__50_SystemComponent.partOf.SystemComponent_SO__82">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__50"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__82"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__50_SystemComponent.partOf.SystemComponent_SO__85">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__50"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__85"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__50_SystemComponent.partOf.SystemComponent_SO__88">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__50"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__88"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__50_SystemComponent.partOf.SystemComponent_SO__91">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__50"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__91"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__50_SystemComponent.usedIn.SystemComponent_SO__94">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__50"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__94"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__50_SystemComponent.usedIn.SystemComponent_SO__97">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__50"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__97"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__50_SystemComponent.usedIn.SystemComponent_SO__114">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__50"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__114"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__62_SystemComponent.usedIn.SystemComponent_SO__71">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__62"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__71"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__73_SystemComponent.usedIn.SystemComponent_SO__82">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__73"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__82"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__73_SystemComponent.usedIn.SystemComponent_SO__85">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__73"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__85"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__73_SystemComponent.usedIn.SystemComponent_SO__88">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__73"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__88"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__73_SystemComponent.usedIn.SystemComponent_SO__91">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__73"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__91"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__102_SystemComponent.usedIn.SystemComponent_SO__111">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__102"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__111"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__116_SystemComponent.usedIn.SystemComponent_SO__125">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__116"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__125"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__116_SystemComponent.usedIn.SystemComponent_SO__167">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__116"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__167"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__127_SystemComponent.usedIn.SystemComponent_SO__136">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__127"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__136"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__127_SystemComponent.usedIn.SystemComponent_SO__139">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__127"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__139"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__141_SystemComponent.usedIn.SystemComponent_SO__150">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__141"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__150"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__152_SystemComponent.usedIn.SystemComponent_SO__161">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__152"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__161"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__169_SystemComponent.partOf.SystemComponent_SO__187">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__169"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__187"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__169_SystemComponent.partOf.SystemComponent_SO__253">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__169"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__253"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__169_SystemComponent.partOf.SystemComponent_SO__256">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__169"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__256"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__169_SystemComponent.usedIn.SystemComponent_SO__259">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__169"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__259"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__169_SystemComponent.usedIn.SystemComponent_SO__313">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__169"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__313"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__178_SystemComponent.usedIn.SystemComponent_SO__187">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__178"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__187"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__178_SystemComponent.usedIn.SystemComponent_SO__199">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__178"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__199"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__178_SystemComponent.usedIn.SystemComponent_SO__271">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__178"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__271"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__178_SystemComponent.usedIn.SystemComponent_SO__283">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__178"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__283"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__189_SystemComponent.partOf.SystemComponent_SO__199">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__189"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__199"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__189_SystemComponent.partOf.SystemComponent_SO__210">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__189"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__210"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__189_SystemComponent.partOf.SystemComponent_SO__221">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__189"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__221"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__189_SystemComponent.partOf.SystemComponent_SO__232">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__189"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__232"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__189_SystemComponent.partOf.SystemComponent_SO__235">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__189"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__235"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__189_SystemComponent.partOf.SystemComponent_SO__238">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__189"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__238"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__189_SystemComponent.partOf.SystemComponent_SO__241">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__189"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__241"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__189_SystemComponent.partOf.SystemComponent_SO__244">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__189"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__244"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__189_SystemComponent.partOf.SystemComponent_SO__247">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__189"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__247"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__189_SystemComponent.partOf.SystemComponent_SO__250">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__189"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__250"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__189_SystemComponent.usedIn.SystemComponent_SO__253">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__189"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__253"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__189_SystemComponent.usedIn.SystemComponent_SO__256">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__189"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__256"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__201_SystemComponent.usedIn.SystemComponent_SO__210">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__201"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__210"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__201_SystemComponent.usedIn.SystemComponent_SO__235">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__201"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__235"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__201_SystemComponent.usedIn.SystemComponent_SO__244">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__201"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__244"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__201_SystemComponent.usedIn.SystemComponent_SO__286">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__201"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__286"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__201_SystemComponent.usedIn.SystemComponent_SO__295">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__201"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__295"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__212_SystemComponent.usedIn.SystemComponent_SO__221">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__212"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__221"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__212_SystemComponent.usedIn.SystemComponent_SO__238">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__212"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__238"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__212_SystemComponent.usedIn.SystemComponent_SO__247">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__212"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__247"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__212_SystemComponent.usedIn.SystemComponent_SO__289">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__212"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__289"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__212_SystemComponent.usedIn.SystemComponent_SO__298">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__212"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__298"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__223_SystemComponent.usedIn.SystemComponent_SO__232">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__223"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__232"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__223_SystemComponent.usedIn.SystemComponent_SO__241">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__223"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__241"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__223_SystemComponent.usedIn.SystemComponent_SO__250">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__223"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__250"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__223_SystemComponent.usedIn.SystemComponent_SO__292">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__223"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__292"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__223_SystemComponent.usedIn.SystemComponent_SO__301">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__223"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__301"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__261_SystemComponent.partOf.SystemComponent_SO__271">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__261"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__271"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__261_SystemComponent.partOf.SystemComponent_SO__304">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__261"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__304"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__261_SystemComponent.partOf.SystemComponent_SO__307">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__261"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__307"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__261_SystemComponent.usedIn.SystemComponent_SO__310">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__261"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__310"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__273_SystemComponent.partOf.SystemComponent_SO__283">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__273"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__283"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__273_SystemComponent.partOf.SystemComponent_SO__286">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__273"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__286"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__273_SystemComponent.partOf.SystemComponent_SO__289">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__273"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__289"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__273_SystemComponent.partOf.SystemComponent_SO__292">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__273"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__292"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__273_SystemComponent.partOf.SystemComponent_SO__295">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__273"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__295"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__273_SystemComponent.partOf.SystemComponent_SO__298">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__273"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__298"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_partOf_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__273_SystemComponent.partOf.SystemComponent_SO__301">
+			<mech:SystemComponent_partOf_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__273"/>
+			<mech:SystemComponent_partOf_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__301"/>
+		</mech:SystemComponent_partOf_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__273_SystemComponent.usedIn.SystemComponent_SO__304">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__273"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__304"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+		<mech:SystemComponent_usedIn_SystemComponent rdf:about="http://www.example.org/idrootx2x0/Pa__273_SystemComponent.usedIn.SystemComponent_SO__307">
+			<mech:SystemComponent_usedIn_SystemComponent_Source rdf:resource="http://www.example.org/idrootx2x0/Pa__273"/>
+			<mech:SystemComponent_usedIn_SystemComponent_Target rdf:resource="http://www.example.org/idrootx2x0/SO__307"/>
+		</mech:SystemComponent_usedIn_SystemComponent>
+	</graph>
+</cas:aPackage>

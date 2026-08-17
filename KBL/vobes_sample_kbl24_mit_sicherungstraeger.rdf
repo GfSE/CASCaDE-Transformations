@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rdf:RDF xmlns:cas="http://www.omg.org/spec/CASCaRA/metamodel/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:default="http://www.omg.org/spec/CASCaRA/ontology/" xmlns:ee="http://www.omg.org/spec/CASCaRA/ontology/ElectricElectronicDesign/" xmlns:kbl="http://www.prostep.org/Car_electric_container/KBL2.3/KBLSchema" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<owl:Ontology rdf:about="http://www.example.org/idrootx2x0/">
+		<dcterms:contributor>Michael Kirsch, :em engineering methods AG</dcterms:contributor>
+		<dcterms:license>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
+https://opensource.org/licenses/MIT</dcterms:license>
+		<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
+	</owl:Ontology>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_0">
+		<rdfs:label>ECP001706</rdfs:label>
+		<default:identifier>id_315_0</default:identifier>
+		<default:title>ECP001706</default:title>
+		<default:description>BUCHSENGEHAEUSE_6-POL</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_8">
+		<rdfs:label>ECP001822</rdfs:label>
+		<default:identifier>id_315_8</default:identifier>
+		<default:title>ECP001822</default:title>
+		<default:description>RD-FLACHSTECKERGEHAEUSE 2-POLIG 2,8MM SCHWARZ</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_2">
+		<rdfs:label>ECP001982BS</rdfs:label>
+		<default:identifier>id_315_2</default:identifier>
+		<default:title>ECP001982BS</default:title>
+		<default:description>Steckgehaeuse_5Pol_Klima</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_3">
+		<rdfs:label>ECP001743</rdfs:label>
+		<default:identifier>id_315_3</default:identifier>
+		<default:title>ECP001743</default:title>
+		<default:description>FLACHKONTAKTGEH_4POL</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_5">
+		<rdfs:label>ECPUNIFCP01</rdfs:label>
+		<default:identifier>id_315_5</default:identifier>
+		<default:title>ECPUNIFCP01</default:title>
+		<default:description>DUMMY_BUCHSENGEH_1POL</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_9">
+		<rdfs:label>ECP001135</rdfs:label>
+		<default:identifier>id_315_9</default:identifier>
+		<default:title>ECP001135</default:title>
+		<default:description>BATTERIEKLEMME_PLUS</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_7">
+		<rdfs:label>ECP001859AG</rdfs:label>
+		<default:identifier>id_315_7</default:identifier>
+		<default:title>ECP001859AG</default:title>
+		<default:description>KABELSCHUH</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_4">
+		<rdfs:label>ECP001859F</rdfs:label>
+		<default:identifier>id_315_4</default:identifier>
+		<default:title>ECP001859F</default:title>
+		<default:description>KABELSCHUH_M6-10MM2</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_1">
+		<rdfs:label>ECP001859AT</rdfs:label>
+		<default:identifier>id_315_1</default:identifier>
+		<default:title>ECP001859AT</default:title>
+		<default:description>KABELSCHUH</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_10">
+		<rdfs:label>ECPSPLICE</rdfs:label>
+		<default:identifier>id_315_10</default:identifier>
+		<default:title>ECPSPLICE</default:title>
+		<default:description>Verbinder</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_304_1">
+		<rdfs:label>AS0105563</rdfs:label>
+		<default:identifier>id_304_1</default:identifier>
+		<default:title>AS0105563</default:title>
+		<default:description>Multifuse</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_309_0">
+		<rdfs:label>CPL001841</rdfs:label>
+		<default:identifier>id_309_0</default:identifier>
+		<default:title>CPL001841</default:title>
+		<default:description>Dichtung</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_311_0">
+		<rdfs:label>CSE001742</rdfs:label>
+		<default:identifier>id_311_0</default:identifier>
+		<default:title>CSE001742</default:title>
+		<default:description>Dichtung</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_311_1">
+		<rdfs:label>CSE001744A</rdfs:label>
+		<default:identifier>id_311_1</default:identifier>
+		<default:title>CSE001744A</default:title>
+		<default:description>Dichtung</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_302_0">
+		<rdfs:label>MFS_740_C150</rdfs:label>
+		<default:identifier>id_302_0</default:identifier>
+		<default:title>MFS_740_C150</default:title>
+		<default:description>Sicherung Type_SF30 150A</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_302_1">
+		<rdfs:label>MFS_740_C110</rdfs:label>
+		<default:identifier>id_302_1</default:identifier>
+		<default:title>MFS_740_C110</default:title>
+		<default:description>Sicherung Type_SF30 110A</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_302_2">
+		<rdfs:label>MFS_740_C80</rdfs:label>
+		<default:identifier>id_302_2</default:identifier>
+		<default:title>MFS_740_C80</default:title>
+		<default:description>Sicherung Type_SF30 80A</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_302_3">
+		<rdfs:label>MFS_740_C40</rdfs:label>
+		<default:identifier>id_302_3</default:identifier>
+		<default:title>MFS_740_C40</default:title>
+		<default:description>Sicherung Type_SF30 40A</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_302_4">
+		<rdfs:label>MFS_740_C50</rdfs:label>
+		<default:identifier>id_302_4</default:identifier>
+		<default:title>MFS_740_C50</default:title>
+		<default:description>Sicherung Type_SF30 50A</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_302_5">
+		<rdfs:label>MFS_740_C60</rdfs:label>
+		<default:identifier>id_302_5</default:identifier>
+		<default:title>MFS_740_C60</default:title>
+		<default:description>Sicherung Type_SF30 60A</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_302_6">
+		<rdfs:label>FUS00113114</rdfs:label>
+		<default:identifier>id_302_6</default:identifier>
+		<default:title>FUS00113114</default:title>
+		<default:description>Sicherung Type_C 25A</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_413_0">
+		<rdfs:label>FBX001546</rdfs:label>
+		<default:identifier>id_413_0</default:identifier>
+		<default:title>FBX001546</default:title>
+		<default:description>Hauptsicherungsbox</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_0">
+		<rdfs:label>ECP001706</rdfs:label>
+		<default:identifier>id_315_0</default:identifier>
+		<default:title>ECP001706</default:title>
+		<default:description>BUCHSENGEHAEUSE_6-POL</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_8">
+		<rdfs:label>ECP001822</rdfs:label>
+		<default:identifier>id_315_8</default:identifier>
+		<default:title>ECP001822</default:title>
+		<default:description>RD-FLACHSTECKERGEHAEUSE 2-POLIG 2,8MM SCHWARZ</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_2">
+		<rdfs:label>ECP001982BS</rdfs:label>
+		<default:identifier>id_315_2</default:identifier>
+		<default:title>ECP001982BS</default:title>
+		<default:description>Steckgehaeuse_5Pol_Klima</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_3">
+		<rdfs:label>ECP001743</rdfs:label>
+		<default:identifier>id_315_3</default:identifier>
+		<default:title>ECP001743</default:title>
+		<default:description>FLACHKONTAKTGEH_4POL</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_5">
+		<rdfs:label>ECPUNIFCP01</rdfs:label>
+		<default:identifier>id_315_5</default:identifier>
+		<default:title>ECPUNIFCP01</default:title>
+		<default:description>DUMMY_BUCHSENGEH_1POL</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_9">
+		<rdfs:label>ECP001135</rdfs:label>
+		<default:identifier>id_315_9</default:identifier>
+		<default:title>ECP001135</default:title>
+		<default:description>BATTERIEKLEMME_PLUS</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_7">
+		<rdfs:label>ECP001859AG</rdfs:label>
+		<default:identifier>id_315_7</default:identifier>
+		<default:title>ECP001859AG</default:title>
+		<default:description>KABELSCHUH</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_4">
+		<rdfs:label>ECP001859F</rdfs:label>
+		<default:identifier>id_315_4</default:identifier>
+		<default:title>ECP001859F</default:title>
+		<default:description>KABELSCHUH_M6-10MM2</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_1">
+		<rdfs:label>ECP001859AT</rdfs:label>
+		<default:identifier>id_315_1</default:identifier>
+		<default:title>ECP001859AT</default:title>
+		<default:description>KABELSCHUH</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_315_10">
+		<rdfs:label>ECPSPLICE</rdfs:label>
+		<default:identifier>id_315_10</default:identifier>
+		<default:title>ECPSPLICE</default:title>
+		<default:description>Verbinder</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_326_0">
+		<rdfs:label>TER00156401</rdfs:label>
+		<default:identifier>id_326_0</default:identifier>
+		<default:title>TER00156401</default:title>
+		<default:description>box</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_326_1">
+		<rdfs:label>TER00184401</rdfs:label>
+		<default:identifier>id_326_1</default:identifier>
+		<default:title>TER00184401</default:title>
+		<default:description>flat</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_326_2">
+		<rdfs:label>ECP001859AT</rdfs:label>
+		<default:identifier>id_326_2</default:identifier>
+		<default:title>ECP001859AT</default:title>
+		<default:description>cable_shoe</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_326_3">
+		<rdfs:label>TER00184901</rdfs:label>
+		<default:identifier>id_326_3</default:identifier>
+		<default:title>TER00184901</default:title>
+		<default:description>cable_shoe</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_326_4">
+		<rdfs:label>TER001859AH</rdfs:label>
+		<default:identifier>id_326_4</default:identifier>
+		<default:title>TER001859AH</default:title>
+		<default:description>cable_shoe</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_326_5">
+		<rdfs:label>TER001137B</rdfs:label>
+		<default:identifier>id_326_5</default:identifier>
+		<default:title>TER001137B</default:title>
+		<default:description>cable_shoe</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_326_6">
+		<rdfs:label>ECP001859F</rdfs:label>
+		<default:identifier>id_326_6</default:identifier>
+		<default:title>ECP001859F</default:title>
+		<default:description>cable_shoe</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_326_7">
+		<rdfs:label>TERUNISNFLK</rdfs:label>
+		<default:identifier>id_326_7</default:identifier>
+		<default:title>TERUNISNFLK</default:title>
+		<default:description>box</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_326_8">
+		<rdfs:label>TER00132602</rdfs:label>
+		<default:identifier>id_326_8</default:identifier>
+		<default:title>TER00132602</default:title>
+		<default:description>flat</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_326_9">
+		<rdfs:label>ECP001859AG</rdfs:label>
+		<default:identifier>id_326_9</default:identifier>
+		<default:title>ECP001859AG</default:title>
+		<default:description>cable_shoe</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_326_10">
+		<rdfs:label>TER001137C</rdfs:label>
+		<default:identifier>id_326_10</default:identifier>
+		<default:title>TER001137C</default:title>
+		<default:description>cable_shoe</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_326_11">
+		<rdfs:label>ECP001135</rdfs:label>
+		<default:identifier>id_326_11</default:identifier>
+		<default:title>ECP001135</default:title>
+		<default:description>cable_shoe</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_327_0">
+		<rdfs:label>WIR0017055</rdfs:label>
+		<default:identifier>id_327_0</default:identifier>
+		<default:title>WIR0017055</default:title>
+		<default:description>Unspezifizierter Draht</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_327_1">
+		<rdfs:label>WIR0010006</rdfs:label>
+		<default:identifier>id_327_1</default:identifier>
+		<default:title>WIR0010006</default:title>
+		<default:description>Unspezifizierter Draht</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_327_2">
+		<rdfs:label>WIR00111701</rdfs:label>
+		<default:identifier>id_327_2</default:identifier>
+		<default:title>WIR00111701</default:title>
+		<default:description>Unspezifizierter Draht</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_327_3">
+		<rdfs:label>WIR00121103</rdfs:label>
+		<default:identifier>id_327_3</default:identifier>
+		<default:title>WIR00121103</default:title>
+		<default:description>Unspezifizierter Draht</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_327_4">
+		<rdfs:label>WIR0010005</rdfs:label>
+		<default:identifier>id_327_4</default:identifier>
+		<default:title>WIR0010005</default:title>
+		<default:description>Unspezifizierter Draht</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_327_5">
+		<rdfs:label>WIR00180202</rdfs:label>
+		<default:identifier>id_327_5</default:identifier>
+		<default:title>WIR00180202</default:title>
+		<default:description>Unspezifizierter Draht</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_327_6">
+		<rdfs:label>WIR00162703</rdfs:label>
+		<default:identifier>id_327_6</default:identifier>
+		<default:title>WIR00162703</default:title>
+		<default:description>Unspezifizierter Draht</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicComponent rdf:about="http://www.example.org/idrootx2x0/id_327_7">
+		<rdfs:label>WIR00198202</rdfs:label>
+		<default:identifier>id_327_7</default:identifier>
+		<default:title>WIR00198202</default:title>
+		<default:description>Unspezifizierter Draht</default:description>
+	</ee:ElectricElectronicComponent>
+	<ee:ElectricElectronicConnection rdf:about="http://www.example.org/idrootx2x0/id_327_0">
+		<rdfs:label>WIR0017055</rdfs:label>
+		<default:identifier>id_327_0</default:identifier>
+		<default:title>WIR0017055</default:title>
+	</ee:ElectricElectronicConnection>
+	<ee:ElectricElectronicConnection rdf:about="http://www.example.org/idrootx2x0/id_327_1">
+		<rdfs:label>WIR0010006</rdfs:label>
+		<default:identifier>id_327_1</default:identifier>
+		<default:title>WIR0010006</default:title>
+	</ee:ElectricElectronicConnection>
+	<ee:ElectricElectronicConnection rdf:about="http://www.example.org/idrootx2x0/id_327_2">
+		<rdfs:label>WIR00111701</rdfs:label>
+		<default:identifier>id_327_2</default:identifier>
+		<default:title>WIR00111701</default:title>
+	</ee:ElectricElectronicConnection>
+	<ee:ElectricElectronicConnection rdf:about="http://www.example.org/idrootx2x0/id_327_3">
+		<rdfs:label>WIR00121103</rdfs:label>
+		<default:identifier>id_327_3</default:identifier>
+		<default:title>WIR00121103</default:title>
+	</ee:ElectricElectronicConnection>
+	<ee:ElectricElectronicConnection rdf:about="http://www.example.org/idrootx2x0/id_327_4">
+		<rdfs:label>WIR0010005</rdfs:label>
+		<default:identifier>id_327_4</default:identifier>
+		<default:title>WIR0010005</default:title>
+	</ee:ElectricElectronicConnection>
+	<ee:ElectricElectronicConnection rdf:about="http://www.example.org/idrootx2x0/id_327_5">
+		<rdfs:label>WIR00180202</rdfs:label>
+		<default:identifier>id_327_5</default:identifier>
+		<default:title>WIR00180202</default:title>
+	</ee:ElectricElectronicConnection>
+	<ee:ElectricElectronicConnection rdf:about="http://www.example.org/idrootx2x0/id_327_6">
+		<rdfs:label>WIR00162703</rdfs:label>
+		<default:identifier>id_327_6</default:identifier>
+		<default:title>WIR00162703</default:title>
+	</ee:ElectricElectronicConnection>
+	<ee:ElectricElectronicConnection rdf:about="http://www.example.org/idrootx2x0/id_327_7">
+		<rdfs:label>WIR00198202</rdfs:label>
+		<default:identifier>id_327_7</default:identifier>
+		<default:title>WIR00198202</default:title>
+	</ee:ElectricElectronicConnection>
+</rdf:RDF>

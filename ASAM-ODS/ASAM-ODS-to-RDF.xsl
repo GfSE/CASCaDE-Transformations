@@ -10,6 +10,11 @@
 				<xsl:attribute name="rdf:about">
 					<xsl:value-of select="$packageUri"/>
 				</xsl:attribute>
+				<dcterms:contributor>Michael Kirsch, :em engineering methods AG</dcterms:contributor>
+				<dcterms:license>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
+https://opensource.org/licenses/MIT</dcterms:license>
 				<owl:imports rdf:resource="http://www.omg.org/spec/CASCaRA/ontology/"/>
 			</owl:Ontology>
 			<!--VerificationRun-->
@@ -52,10 +57,14 @@
 							<xsl:value-of select="concat($packageUri, $identifier,'_VerificationRun.ownedBy.Actor_',.)"/>
 						</xsl:attribute>
 						<ver:VerificationRun_ownedBy_Actor_Source>
-							<xsl:value-of select="concat($packageUri, $identifier)"/>
+							<xsl:attribute name="rdf:resource">
+								<xsl:value-of select="concat($packageUri, $identifier)"/>
+							</xsl:attribute>
 						</ver:VerificationRun_ownedBy_Actor_Source>
 						<ver:VerificationRun_ownedBy_Actor_Target>
-							<xsl:value-of select="concat($packageUri,.)"/>
+							<xsl:attribute name="rdf:resource">
+								<xsl:value-of select="concat($packageUri,.)"/>
+							</xsl:attribute>
 						</ver:VerificationRun_ownedBy_Actor_Target>
 					</ver:VerificationRun_ownedBy_Actor>
 				</xsl:for-each>
@@ -103,10 +112,14 @@
 							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.ownedBy.Actor_',.)"/>
 						</xsl:attribute>
 						<ver:SystemComponent_ownedBy_Actor_Source>
-							<xsl:value-of select="concat($packageUri, $identifier)"/>
+							<xsl:attribute name="rdf:resource">
+								<xsl:value-of select="concat($packageUri, $identifier)"/>
+							</xsl:attribute>
 						</ver:SystemComponent_ownedBy_Actor_Source>
 						<ver:SystemComponent_ownedBy_Actor_Target>
-							<xsl:value-of select="concat($packageUri,.)"/>
+							<xsl:attribute name="rdf:resource">
+								<xsl:value-of select="concat($packageUri,.)"/>
+							</xsl:attribute>
 						</ver:SystemComponent_ownedBy_Actor_Target>
 					</ver:SystemComponent_ownedBy_Actor>
 				</xsl:for-each>
@@ -148,10 +161,14 @@
 							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.partOf.SystemComponent_',.)"/>
 						</xsl:attribute>
 						<ver:SystemComponent_partOf_SystemComponent_Source>
-							<xsl:value-of select="concat($packageUri, $identifier)"/>
+							<xsl:attribute name="rdf:resource">
+								<xsl:value-of select="concat($packageUri, $identifier)"/>
+							</xsl:attribute>
 						</ver:SystemComponent_partOf_SystemComponent_Source>
 						<ver:SystemComponent_partOf_SystemComponent_Target>
-							<xsl:value-of select="concat($packageUri,.)"/>
+							<xsl:attribute name="rdf:resource">
+								<xsl:value-of select="concat($packageUri,.)"/>
+							</xsl:attribute>
 						</ver:SystemComponent_partOf_SystemComponent_Target>
 					</ver:SystemComponent_partOf_SystemComponent>
 				</xsl:for-each>
@@ -162,10 +179,14 @@
 							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.usedIn.SystemComponent_',.)"/>
 						</xsl:attribute>
 						<ver:SystemComponent_usedIn_SystemComponent_Source>
-							<xsl:value-of select="concat($packageUri, $identifier)"/>
+							<xsl:attribute name="rdf:resource">
+								<xsl:value-of select="concat($packageUri, $identifier)"/>
+							</xsl:attribute>
 						</ver:SystemComponent_usedIn_SystemComponent_Source>
 						<ver:SystemComponent_usedIn_SystemComponent_Target>
-							<xsl:value-of select="concat($packageUri,.)"/>
+							<xsl:attribute name="rdf:resource">
+								<xsl:value-of select="concat($packageUri,.)"/>
+							</xsl:attribute>
 						</ver:SystemComponent_usedIn_SystemComponent_Target>
 					</ver:SystemComponent_usedIn_SystemComponent>
 				</xsl:for-each>
@@ -176,10 +197,14 @@
 							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.fulfils.Requirement_',.)"/>
 						</xsl:attribute>
 						<ver:SystemComponent_fulfils_Requirement_Source>
-							<xsl:value-of select="concat($packageUri, $identifier)"/>
+							<xsl:attribute name="rdf:resource">
+								<xsl:value-of select="concat($packageUri, $identifier)"/>
+							</xsl:attribute>
 						</ver:SystemComponent_fulfils_Requirement_Source>
 						<ver:SystemComponent_fulfils_Requirement_Target>
-							<xsl:value-of select="concat($packageUri,.)"/>
+							<xsl:attribute name="rdf:resource">
+								<xsl:value-of select="concat($packageUri,.)"/>
+							</xsl:attribute>
 						</ver:SystemComponent_fulfils_Requirement_Target>
 					</ver:SystemComponent_fulfils_Requirement>
 				</xsl:for-each>
@@ -190,10 +215,14 @@
 							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.fulfils.Requirement_',.)"/>
 						</xsl:attribute>
 						<ver:SystemComponent_fulfils_Requirement_Source>
-							<xsl:value-of select="concat($packageUri, $identifier)"/>
+							<xsl:attribute name="rdf:resource">
+								<xsl:value-of select="concat($packageUri, $identifier)"/>
+							</xsl:attribute>
 						</ver:SystemComponent_fulfils_Requirement_Source>
 						<ver:SystemComponent_fulfils_Requirement_Target>
-							<xsl:value-of select="concat($packageUri,.)"/>
+							<xsl:attribute name="rdf:resource">
+								<xsl:value-of select="concat($packageUri,.)"/>
+							</xsl:attribute>
 						</ver:SystemComponent_fulfils_Requirement_Target>
 					</ver:SystemComponent_fulfils_Requirement>
 				</xsl:for-each>
@@ -238,10 +267,14 @@
 							<xsl:value-of select="concat($packageUri, $identifier,'_SystemComponent.ownedBy.Actor_',.)"/>
 						</xsl:attribute>
 						<sys:SystemComponent_ownedBy_Actor_Source>
-							<xsl:value-of select="concat($packageUri, $identifier)"/>
+							<xsl:attribute name="rdf:resource">
+								<xsl:value-of select="concat($packageUri, $identifier)"/>
+							</xsl:attribute>
 						</sys:SystemComponent_ownedBy_Actor_Source>
 						<sys:SystemComponent_ownedBy_Actor_Target>
-							<xsl:value-of select="concat($packageUri,.)"/>
+							<xsl:attribute name="rdf:resource">
+								<xsl:value-of select="concat($packageUri,.)"/>
+							</xsl:attribute>
 						</sys:SystemComponent_ownedBy_Actor_Target>
 					</sys:SystemComponent_ownedBy_Actor>
 				</xsl:for-each>
