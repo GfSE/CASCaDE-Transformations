@@ -19,7 +19,7 @@ Limitations - does not extract:
 ### ReqIF-to-CAS.sef.json
 
 Created from the above for use with the CASCaRA Validation Tool (Reference Implementation). 
-The need for this format arises from the open-source transformation library Saxon-JS, 
+The need for this format arises from the transformation library Saxon-JS, 
 which does not support the native .xsl format. 
 
 ### CASCaRA Validation Tool
